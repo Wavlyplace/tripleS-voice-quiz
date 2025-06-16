@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>tripleS Voice Quiz</title>
+  <style>
+  :root {
+    --accent: #8c52ff;
+    --text-light: #333;
+    --text-dark: #eee;
+    --bg-light: #f5f5f5;
+    --bg-dark: #121212;
+    --card-light: #ffffff;
+    --card-dark: #1e1e1e;
+    --correct-bg-light: #d4edda;
+    --correct-bg-dark: #295a37;
+    --incorrect-bg-light: #f8d7da;
+    --incorrect-bg-dark: #7a2a2a;
+  }
+
+  body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  audio {
+    margin: 1rem 0;
+  }
+
+  .score-container {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  #resetButton {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--card-light);
+    color: var(--text-light);
+    border: 2px solid var(--accent);
+    border-radius: 0.5rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  #resetButton:hover {
+    background-color: var(--accent);
+    color: white;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .guess-btn {
+    width: 120px;
+    height: 150px;
+    padding: 10px;
+    border-radius: 1rem;
+    border: 2px solid transparent;
+    background-color: var(--card-light);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .guess-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent);
+  }
+
+  .btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-content span {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: bold;
+  }
+
+	.correct-flash img {
+	  animation: bounce 0.3s ease-in-out;
+	  box-shadow: 0 0 8px 2px limegreen;
+	  border-radius: 0.75rem;
+	}
+
+  @keyframes flash-outline {
+    0% {
+      outline-color: limegreen;
+    }
+    100% {
+      outline-color: transparent;
+    }
+  }
+
+  #feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #feedback.correct {
+    background-color: var(--correct-bg-light);
+    color: #155724;
+  }
+
+  #feedback.incorrect {
+    background-color: var(--incorrect-bg-light);
+    color: #721c24;
+  }
+
+  #feedback.show {
+    opacity: 1;
+  }
+
+  #modeSelector label {
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+
+  #biasSelector label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  #memberStats {
+    margin-top: 1rem;
+    background: var(--card-light);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    text-align: left;
+  }
+
+  #memberStats ul {
+    padding-left: 1.2rem;
+    list-style-type: disc;
+  }
+
+  #scoreDisplay,
+  #streakDisplay,
+  #highScoreDisplay {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  /* 🌙 Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    #resetButton {
+      background-color: var(--card-dark);
+      color: var(--text-dark);
+    }
+
+    .guess-btn {
+      background-color: var(--card-dark);
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-content span {
+      color: var(--text-dark);
+    }
+
+    #memberStats {
+      background: var(--card-dark);
+      color: var(--text-dark);
+    }
+
+    #feedback.correct {
+      background-color: var(--correct-bg-dark);
+      color: #c2f0c2;
+    }
+
+    #feedback.incorrect {
+      background-color: var(--incorrect-bg-dark);
+      color: #ffd6d6;
+    }
+	
+	@keyframes bounce {
+	  0%, 100% { transform: scale(1); }
+	  50% { transform: scale(1.15); }
+	}
+
+	;.correct-flash {
+	;  animation: bounce 0.3s ease-in-out;
+	;}
+	
+	/* Button highlight */
+	.correct-button {
+	  animation: pulse-border 0.4s ease;
+	}
+
+	@keyframes pulse-border {
+	  0% { border-width: 4px; transform: scale(1.05); }
+	  100% { border-width: 2px; transform: scale(1); }
+	}
+
+	@keyframes shake {
+	  0% { transform: translateX(0); }
+	  25% { transform: translateX(-6px); }
+	  50% { transform: translateX(6px); }
+	  75% { transform: translateX(-6px); }
+	  100% { transform: translateX(0); }
+	}
+
+	.incorrect-shake {
+	  animation: shake 0.4s ease-in-out;
+	}
+	
+	@keyframes feedbackIn {
+	  from {
+		opacity: 0;
+		transform: translate(-50%, -60%);
+	  }
+	  to {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	  }
+	}
+
+	@keyframes feedbackOut {
+	  from {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	  }
+	  to {
+		opacity: 0;
+		transform: translate(-50%, -40%);
+	  }
+	}
+
+	#feedback.show {
+	  animation: feedbackIn 0.3s ease forwards;
+	}
+	#feedback:not(.show) {
+	  animation: feedbackOut 0.3s ease forwards;
+	}
+	
+	#songSelector {
+		margin-bottom: 1rem;
+		font-family: 'Arial', sans-serif;
+	}
+
+	#songSelector label {
+		font-weight: bold;
+		margin-right: 0.5rem;
+	}
+
+	#songDropdown {
+		padding: 0.3rem 0.6rem;
+		border-radius: 6px;
+		font-size: 1rem;
+	}
+	
+	#biasSelector {
+	  opacity: 0;
+	  max-height: 0;
+	  overflow: hidden;
+	  transition: opacity 0.3s ease, max-height 0.3s ease;
+	}
+
+	#biasSelector.show {
+	  opacity: 1;
+	  max-height: 500px; /* large enough to fit content */
+	}
+	
+	h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+	
+    label {
+      margin-right: 0.5rem;
+    }
+	
+    select, button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+	
+    .custom-audio-controls {
+	  display: flex;
+	  justify-content: center; /* center horizontally */
+	  align-items: center;
+	  margin: 1rem 0;
+	}
+
+    .hidden {
+      display: none;
+    }
+	
+    .score-container {
+      margin-top: 2rem;
+    }
+	
+    .buttons {
+      margin-top: 1.5rem;
+    }
+	
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+	
+	.audio-button {
+	  width: 64px;
+	  height: 64px;
+	  background-color: black;
+	  color: white;
+	  border-radius: 50%;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  transition: background-color 0.3s ease;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	  border: none;
+	  cursor: pointer;
+	}
+
+	.audio-button:hover {
+	  background-color: #333;
+	}
+
+	.icon {
+	  width: 24px;
+	  height: 24px;
+	  fill: currentColor;
+	}
+	
+	#visualizer {
+	  display: block;
+	  width: 100%;
+	  max-width: 100%;
+	  height: 150px;
+	  background-color: #000; /* pure black background */
+	  border-radius: 8px;
+	  box-shadow:
+		0 0 10px #ffffff, /* subtle white-yellow glow */
+		inset 0 0 15px #666; /* inner shadow for depth */
+	  margin-top: 1rem;
+	}
+	
+	.lyric-box {
+	  background: rgba(255, 255, 255, 0.05);
+	  border: 1px solid rgba(255, 255, 255, 0.2);
+	  padding: 1rem 1.5rem;
+	  margin-top: 1rem;
+	  border-radius: 12px;
+	  color: white;
+	  font-size: 1.2rem;
+	  text-align: center;
+	  max-width: 90%;
+	  margin-left: auto;
+	  margin-right: auto;
+	  transition: opacity 0.3s ease;
+	}
+
+	.lyric-line {
+	  opacity: 0;
+	  transition: opacity 0.4s ease, transform 0.4s ease;
+	  transform: translateY(10px);
+	}
+
+	.lyric-line.show {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+
+	.hidden {
+	  display: none;
+	}
+  }
+</style>
+</head>
+<body>
+  <h1>🎤 tripleS Voice Quiz</h1>
+
+  <div id="songSelector">
+    <label for="songDropdown">Choose a song:</label>
+    <select id="songDropdown"></select>
+  </div>
+  
+  <div id="sequentialModeWrapper" style="display: none; margin-top: 1rem;">
+	  <label>
+		<input type="checkbox" id="sequentialModeCheckbox">
+		Sequential Mode
+	  </label>
+  </div>
+
+  <div id="modeSelector">
+    <label><input type="radio" name="mode" value="all" checked> All Members</label>
+    <label><input type="radio" name="mode" value="bias"> My Biases</label>
+  </div>
+  
+  <label>
+  <input type="checkbox" id="lyricModeCheckbox" />
+  Show Lyrics
+  </label>
+
+  <div id="biasSelector" style="margin-top: 1rem;"></div>
+
+  <audio id="audioPlayer"></audio>
+
+  <canvas id="visualizer" width="800" height="150" style="width: 100%; height: 150px; margin-top: 1rem;"></canvas>
+  
+  <div id="lyricBox" class="lyric-box hidden">
+	  <p id="lyricLine" class="lyric-line"></p>
+  </div>
+
+  <div class="custom-audio-controls flex justify-center mt-6">
+	  <button id="playPauseBtn" class="audio-button">
+		<svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+		  <path d="M8 5v14l11-7z" />
+		</svg>
+		<svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+		  <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+		</svg>
+	  </button>
+	</div>
+
+  <div class="score-container">
+    <p id="scoreDisplay">Score: <span id="animatedScore">0</span> / <span id="attemptsCount">0</span> (<span id="accuracyPercent">0</span>%)</p>
+    <p id="streakDisplay">🔥 Streak: 0</p>
+    <p id="highScoreDisplay">🏆 High Score: 0</p>
+    <button id="resetButton">Reset Score</button>
+  </div>
+
+  <div class="buttons" id="guessButtons"></div>
+
+  <div id="feedback" class="hidden"></div>
+
+  <div id="memberStats" style="margin-top: 2rem;"></div>
+</body>
+
+<script>
+  let clips = [];
+  let currentClip = null;
+  let score = 0;
+  let attempts = 0;
+  let streak = 0;
+  let highScore = parseInt(localStorage.getItem('highScore') || '0');
+  let memberStats = {};
+  let isFirstLoad = true;
+  let sourceNode;
+  let animationId;
+
+  let canvasAudioCtx = null;
+  let canvasAnalyser = null;
+  let canvasSource = null;
+  let visualizerInitialized = false;
+  let suppressNextLoadClipAlert = false; // Global or scoped above functions
+  let previouslySelectedBiases = [];
+  let sequentialIndex = 0;
+
+  const memberColors = {
+    Nakyoung: "#5F9EA0",
+    Joobin: "#B7F54A",
+    Hyerin: "#BF00FF",
+    Seoah: "#CFF4FF",
+    Kotone: "#FFDF00",
+    Soomin: "#EF98AA",
+    Xinyu: "#C80815",
+    Hayeon: "#52D9BB",
+    Lynn: "#AB62B4",
+    Sohyun: "#1034A6",
+	
+	Shion: "#FF428A",
+	Seoyeon: "#1E90FF",
+	Chaeyeon: "#66CC33",
+	Yubin: "#FFE4E1",
+	Sullin: "#7BBA8D",
+	Kaede: "#FFCC33",
+	Dahyun: "#FBA0E3",
+	Yooyeon: "#EC118F",
+	Jiyeon: "#FEAA61",
+	Mayu: "#FFA089",
+	Yeonji: "#4169E1",
+	Jiwoo: "#FAFA33",
+	Chaewon: "#C7A3DF",
+	Nien: "#FFA343"
+  };
+  
+  function getMode() {
+	  return document.querySelector('input[name="mode"]:checked').value;
+	}
+	
+  function formatSongFolderName(songName) {
+		return songName.toLowerCase().replace(/\s+/g, "");
+	}
+  
+  function getMembersForSelectedSong() {
+	  const selectedSong = document.getElementById('songDropdown').value;
+	  const filteredClips = clips.filter(c => c.song === selectedSong);
+	  const uniqueMembers = [...new Set(filteredClips.map(c => c.member))]; // no sort here
+	  return uniqueMembers;
+	}
+	
+  function isSequentialMode() {
+	  const checkbox = document.getElementById('sequentialModeCheckbox');
+	  return checkbox && checkbox.checked;
+	}
+
+  function renderGuessButtons() {
+    const selectedMembers = getSelectedMembers();
+	const customOrder = [
+    "Seoyeon", "Hyerin", "Jiwoo", "Chaeyeon", "Yooyeon", "Soomin", "Nakyoung", "Yubin", "Kaede", "Dahyun", "Kotone", "Yeonji",
+    "Nien", "Sohyun", "Xinyu", "Mayu", "Lynn", "Joobin", "Hayeon", "Shion", "Chaewon", "Sullin", "Seoah", "Jiyeon"
+  ];
+  selectedMembers.sort((a, b) => customOrder.indexOf(a) - customOrder.indexOf(b));
+
+    const buttonContainer = document.getElementById('guessButtons');
+    buttonContainer.innerHTML = '';
+
+    selectedMembers.forEach(member => {
+      memberStats[member] = memberStats[member] || { appearances: 0, correctGuesses: 0 };
+
+      const btn = document.createElement('button');
+      btn.className = 'guess-btn';
+      btn.onclick = () => guess(member);
+      btn.style.borderColor = memberColors[member];
+      btn.dataset.name = member;
+
+      const content = document.createElement('div');
+      content.className = 'btn-content';
+
+      const img = document.createElement('img');
+      const selectedSong = document.getElementById('songDropdown').value;
+	  const songFolder = formatSongFolderName(selectedSong);
+	  const fileSafeMember = member.toLowerCase().replace(/\s+/g, '');
+	  img.src = `img/members/${songFolder}/${fileSafeMember}.jpg`;
+
+      img.alt = member;
+
+      const label = document.createElement('span');
+      label.textContent = member;
+
+      content.appendChild(img);
+      content.appendChild(label);
+      btn.appendChild(content);
+      buttonContainer.appendChild(btn);
+    });
+  }
+  
+  function formatSongFolderName(songName) {
+	  if (songName === 'All Songs') return 'default';
+	  return songName.toLowerCase().replace(/[^a-z0-9]/g, '');
+	}
+
+  function populateBiasSelector() {
+	  const container = document.getElementById('biasSelector');
+	  container.innerHTML = '';
+
+	  const selectedSong = document.getElementById('songDropdown').value;
+	  let relevantClips = clips;
+
+	  if (selectedSong !== 'All Songs') {
+		relevantClips = clips.filter(c => c.song === selectedSong);
+	  }
+
+	  const songMembers = [...new Set(relevantClips.map(c => c.member))];
+
+	  const customOrder = [
+		"Seoyeon", "Hyerin", "Jiwoo", "Chaeyeon", "Yooyeon", "Soomin", "Nakyoung", "Yubin",
+		"Kaede", "Dahyun", "Kotone", "Yeonji", "Nien", "Sohyun", "Xinyu", "Mayu", "Lynn",
+		"Joobin", "Hayeon", "Shion", "Chaewon", "Sullin", "Seoah", "Jiyeon"
+	  ];
+
+	  const orderedMembers = songMembers.slice().sort(
+		(a, b) => customOrder.indexOf(a) - customOrder.indexOf(b)
+	  );
+
+	  orderedMembers.forEach(member => {
+		const label = document.createElement('label');
+		label.style.marginRight = '1rem';
+
+		const checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.value = member;
+		checkbox.checked = previouslySelectedBiases.includes(member);
+
+		checkbox.addEventListener('change', () => {
+		  const selectedBiases = Array.from(container.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+		  previouslySelectedBiases = selectedBiases; // ✅ Remember selections
+		  renderGuessButtons();
+		  loadNextClip();
+		});
+
+		label.appendChild(checkbox);
+		label.appendChild(document.createTextNode(` ${member}`));
+		container.appendChild(label);
+	  });
+	}
+
+  function populateSongSelector(songs) {
+	  const dropdown = document.getElementById('songDropdown');
+	  dropdown.innerHTML =`<option value="All Songs">All Songs</option>` + songs.map(song => `<option value="${song}">${song}</option>`).join('');
+	}
+
+  function updateModeUI() {
+		const mode = getMode();
+		const biasSelector = document.getElementById('biasSelector');
+
+		if (mode === 'bias') {
+			biasSelector.classList.add('show');
+			populateBiasSelector();
+
+			setTimeout(() => {
+				suppressNextLoadClipAlert = true; // ✅ Move inside setTimeout
+				document.querySelectorAll('#biasSelector input[type="checkbox"]').forEach(cb => cb.checked = false);
+				renderGuessButtons();
+				loadNextClip();
+			}, 0);
+		} else {
+			biasSelector.classList.remove('show');
+
+			// ✅ Ensure all checkboxes are checked when exiting Bias mode
+			document.querySelectorAll('#biasSelector input[type="checkbox"]').forEach(cb => cb.checked = true);
+			renderGuessButtons();
+			loadNextClip();
+		}
+	}
+
+  function getSelectedMembers() {
+	  const selectedSong = document.getElementById('songDropdown').value;
+	  const mode = document.querySelector('input[name="mode"]:checked').value;
+
+	  let relevantClips = clips;
+
+	  if (selectedSong !== 'All Songs') {
+		relevantClips = clips.filter(c => c.song === selectedSong);
+	  }
+
+	  const songMembers = [...new Set(relevantClips.map(c => c.member))];
+
+	  if (mode === 'bias') {
+		const selectedBiases = Array.from(document.querySelectorAll('#biasSelector input[type="checkbox"]:checked')).map(cb => cb.value);
+		return selectedBiases.filter(bias => songMembers.includes(bias));
+	  }
+
+	  return songMembers;
+	}
+
+  async function loadClips() {
+	  try {
+		// Fetch the raw clips JSON file
+		const response = await fetch('clips.json'); // Replace with your JSON path
+		if (!response.ok) {
+		  throw new Error(`HTTP error! status: ${response.status}`);
+		}
+		const rawClips = await response.json();
+
+		// Map to internal format
+		clips = rawClips.map(c => ({
+		  id: c.ID,
+		  member: c.Member,
+		  song: c.Song,
+		  filename: c.Filename,
+		  timestamp: c.Timestamp,
+		  difficulty: c.Difficulty,
+		  notes: c.Notes,
+		  lyric: c.Lyric
+		}));
+
+		console.log("Raw clips loaded:", rawClips.length);
+		console.log("Mapped clips:", clips.length);
+
+		// Now, once clips are loaded, do all this:
+		console.log("Mapped clips:", clips);
+
+		const allMembers = [...new Set(clips.map(c => c.member))];
+		const allSongs = [...new Set(clips.map(c => c.song?.trim()).filter(Boolean))];
+
+		console.log("All songs:", allSongs);
+
+		populateBiasSelector(allMembers);
+		populateSongSelector(allSongs);
+		console.log('Detected songs:', allSongs);
+
+		document.querySelectorAll('input[name="mode"]').forEach(radio => {
+		  radio.addEventListener('change', () => {
+			updateModeUI();
+			if (radio.value === 'bias') {
+			  populateBiasSelector(allMembers);
+			}
+		  });
+		});
+
+		renderGuessButtons();
+		loadNextClip();
+
+		document.getElementById('songDropdown').addEventListener('change', () => {
+		  const selectedSong = document.getElementById('songDropdown').value;
+		  const sequentialWrapper = document.getElementById('sequentialModeWrapper');
+		  const sequentialCheckbox = document.getElementById('sequentialModeCheckbox');
+
+		  // Show/hide sequential mode checkbox
+		  if (selectedSong === 'All Songs') {
+			sequentialWrapper.style.display = 'none';
+			sequentialCheckbox.checked = false; // Reset sequential mode when not valid
+		  } else {
+			sequentialWrapper.style.display = 'block';
+		  }
+
+		  // Reset sequential index only if sequential mode is active AND single song selected
+		  if (sequentialCheckbox.checked && selectedSong !== 'All Songs') {
+			sequentialIndex = 0; // 🔁 Reset sequence at start of new song
+		  }
+
+		  // Repopulate biases if in bias mode
+		  const mode = document.querySelector('input[name="mode"]:checked').value;
+		  if (mode === 'bias') populateBiasSelector(allMembers);
+
+		  renderGuessButtons();
+		  loadNextClip();
+		});
+		
+		document.getElementById('sequentialModeCheckbox').addEventListener('change', () => {
+		  const isSequential = document.getElementById('sequentialModeCheckbox').checked;
+
+		  if (isSequential) {
+			sequentialIndex = 0;
+			loadNextClip(); // 🔁 Start sequence fresh
+		  } else {
+			loadNextClip(); // 🎲 Go back to random mode
+		  }
+		});
+
+		document.querySelectorAll('input[name="mode"]').forEach(radio => {
+		  radio.addEventListener('change', updateModeUI);
+		});
+
+	  } catch (error) {
+		console.error("Failed to load clips:", error);
+	  }
+	}
+	
+  document.getElementById('lyricModeCheckbox').addEventListener('change', updateLyricBox);
+
+  function loadNextClip() {
+	  const selectedMembers = getSelectedMembers();
+	  const selectedSong = document.getElementById('songDropdown').value;
+
+	  const inkigayoTheme = {
+		background: '#000000',
+		gradientFrom: 'rgba(255, 255, 255, 1)',
+		gradientTo: 'rgba(255, 255, 255, 0.1)',
+		shadowColor: 'white'
+	  };
+
+	  let filteredClips = clips.filter(clip => {
+		const matchesSong = selectedSong === 'All Songs' || clip.song === selectedSong;
+		const matchesMember = selectedMembers.includes(clip.member);
+		return matchesSong && matchesMember;
+	  });
+
+	  if (filteredClips.length === 0) {
+		if (!isFirstLoad && !suppressNextLoadClipAlert) {
+		  alert('No clips match this selection!');
+		}
+		suppressNextLoadClipAlert = false;
+		return;
+	  }
+
+	  suppressNextLoadClipAlert = false;
+	  isFirstLoad = false;
+
+	  // 🎯 Sequential Mode logic
+		if (isSequentialMode() && selectedSong !== 'All Songs') {
+			filteredClips.sort((a, b) => a.ID - b.ID);
+
+			if (sequentialIndex >= filteredClips.length) {
+				alert("You've reached the end of the clips for this song! Starting over.");
+				sequentialIndex = 0;
+			}
+
+			currentClip = filteredClips[sequentialIndex];
+			sequentialIndex++;
+		} else {
+			// Non-sequential mode: pick random clip
+			currentClip = filteredClips[Math.floor(Math.random() * filteredClips.length)];
+		}
+
+	  const folder = formatSongFolderName(currentClip.song);
+	  const audioPlayer = document.getElementById('audioPlayer');
+	  
+	  audioPlayer.addEventListener('play', () => {
+		  updatePlayPauseIcon(true);  // true = is playing
+		});
+
+	  audioPlayer.addEventListener('pause', () => {
+		  updatePlayPauseIcon(false); // false = is paused
+		});
+	  audioPlayer.src = `audio/${folder}/${currentClip.filename}`;
+
+	  const theme = selectedSong === 'All Songs'
+		? inkigayoTheme
+		: (visualizerThemes[currentClip.song] || inkigayoTheme);
+
+	  audioPlayer.addEventListener('ended', () => {
+		updatePlayPauseIcon(false);
+	  });
+
+	  setupCanvasVisualizer(audioPlayer, theme);
+	  audioPlayer.load();
+	  audioPlayer.play().catch(e => {
+		  // Optional: console log or silent fallback
+		  console.log('Autoplay failed:', e);
+		});
+		
+	  updateLyricBox();
+	}
+	
+  function updateLyricBox() {
+	  const lyricBox = document.getElementById('lyricBox');
+	  const lyricLine = document.getElementById('lyricLine');
+	  const lyricModeCheckbox = document.getElementById('lyricModeCheckbox');
+	  const isLyricMode = lyricModeCheckbox.checked;
+
+	  if (isLyricMode && currentClip && currentClip.lyric) {
+		lyricBox.classList.remove('hidden');
+
+		const lines = currentClip.lyric.split(' / ');
+		lyricLine.classList.remove('show');
+		setTimeout(() => {
+		  lyricLine.innerHTML = lines.join('<br>');
+		  lyricLine.classList.add('show');
+		}, 100);
+	  } else {
+		lyricBox.classList.add('hidden');
+	  }
+	}
+
+	const audio = document.getElementById('audioPlayer');
+	audio.addEventListener('play', () => updatePlayPauseIcon(true));
+	audio.addEventListener('pause', () => updatePlayPauseIcon(false));
+	const playBtn = document.getElementById('playPauseBtn');
+	const playIcon = document.getElementById('playIcon');
+	const pauseIcon = document.getElementById('pauseIcon');
+	const svg = document.getElementById('visualizer');
+	const NUM_BARS = 64;
+
+  const visualizerThemes = {
+	  "Are You Alive": {
+		background: "#021222",
+		gradientFrom: "rgba(38, 79, 114, 1)",  // teal-ish highlight
+		gradientTo: "rgba(38, 79, 114, 0.1)",
+		shadowColor: "#264f72",
+	  },
+	  "Hit the Floor": {
+		background: "#1a0000",
+		gradientFrom: "rgba(255, 50, 50, 1)",  // aggressive red
+		gradientTo: "rgba(255, 50, 50, 0.1)",
+		shadowColor: "#ff3232",
+	  },
+	  "Untitled": {
+		background: "#1a1410",  // muted earthy brown
+		gradientFrom: "rgba(177, 114, 62, 1)",  // blue tone
+		gradientTo: "rgba(132, 101, 76, 0.1)",
+		shadowColor: "#c78638",
+	  },
+	  "Girls Never Die": {
+		background: '#000000',
+		gradientFrom: 'rgba(255, 255, 255, 1)',
+		gradientTo: 'rgba(255, 255, 255, 0.1)',
+		shadowColor: 'white'
+	  },
+	  "Door": {
+		background: "#fff0f5",  // soft blush
+		gradientFrom: "rgba(255, 182, 193, 1)",  // cherry blossom pink
+		gradientTo: "rgba(255, 182, 193, 0.1)",
+		shadowColor: "#ffb6c1",
+	  },
+	  "Just Do It": {
+		background: "#001d3b",  // dark blue
+		gradientFrom: "rgba(107, 164, 194, 1)",  
+		gradientTo: "rgba(107, 164, 194, 0.1)",
+		shadowColor: "#207ca8",
+	  },
+	  "Invincible": {
+		background: "#0B0C0D",  // almost black
+		gradientFrom: "rgba(176, 213, 217, 1)",  // light blue
+		gradientTo: "rgba(3, 103, 166, 0.1)",
+		shadowColor: "#0367A6",
+	  },
+	  "Girls Capitalism": {
+		background: "#D1DAE7",  // very light blue
+		gradientFrom: "rgba(100, 140, 173, 1)",  // blue
+		gradientTo: "rgba(160, 207, 236, 0.5)",
+		shadowColor: "#94A8BC",
+	  }
+	};
+
+  function setVisualizerStyle(styleName) {
+	  if (visualizerStyles[styleName]) {
+		currentStyle = visualizerStyles[styleName];
+	  }
+	}
+
+  let visualizerTheme = null;  // global or higher scope variable
+
+  function setupCanvasVisualizer(audioElement, theme) {
+	  if (!visualizerInitialized) {
+		// One-time setup
+		const canvas = document.getElementById('visualizer');
+		const canvasCtx = canvas.getContext('2d');
+
+		canvasAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		canvasAnalyser = canvasAudioCtx.createAnalyser();
+		canvasSource = canvasAudioCtx.createMediaElementSource(audioElement);
+
+		canvasSource.connect(canvasAnalyser);
+		canvasAnalyser.connect(canvasAudioCtx.destination);
+
+		canvasAnalyser.fftSize = 256;
+		bufferLength = canvasAnalyser.frequencyBinCount;
+		dataArray = new Uint8Array(bufferLength);
+
+		barWidth = 10;
+		barGap = 4;
+
+		visualizerTheme = theme; // initialize with first theme
+
+		function draw() {
+		  requestAnimationFrame(draw);
+
+		  const width = canvas.width = canvas.offsetWidth;
+		  const height = canvas.height = canvas.offsetHeight;
+
+		  canvasCtx.clearRect(0, 0, width, height);
+		  canvasCtx.fillStyle = visualizerTheme.background;
+		  canvasCtx.fillRect(0, 0, width, height);
+
+		  canvasAnalyser.getByteFrequencyData(dataArray);
+
+		  for (let i = 0; i < bufferLength; i++) {
+			const volume = dataArray[i] / 255;
+			const scaledHeight = volume * height * 0.9;
+
+			const x = i * (barWidth + barGap);
+			const y = height - scaledHeight;
+
+			const gradient = canvasCtx.createLinearGradient(x, y, x, height);
+			gradient.addColorStop(0, visualizerTheme.gradientFrom);
+			gradient.addColorStop(1, visualizerTheme.gradientTo);
+
+			canvasCtx.shadowColor = visualizerTheme.shadowColor;
+			canvasCtx.shadowBlur = visualizerTheme.shadowBlur || 10;
+
+			canvasCtx.fillStyle = gradient;
+			canvasCtx.fillRect(x, y, barWidth, scaledHeight);
+		  }
+
+		  canvasCtx.shadowBlur = 0;
+		}
+
+		draw();
+		visualizerInitialized = true;
+
+	  } else {
+		// Visualizer already initialized, just update the theme variable
+		visualizerTheme = theme;
+	  }
+	}
+
+  function guess(member) {
+    attempts++;
+    memberStats[currentClip.member].appearances++;
+
+    const isCorrect = member === currentClip.member;
+    const buttons = document.querySelectorAll('.guess-btn');
+
+    buttons.forEach(button => {
+      const selectedName = button.dataset.name;
+      if (selectedName === member) {
+		  if (isCorrect) {
+			button.classList.add("correct-button");
+		  } else {
+			button.classList.add("incorrect-shake");
+		  }
+		  setTimeout(() => {
+			button.classList.remove("correct-button", "incorrect-shake");
+		  }, 400);
+		}
+    });
+
+    if (isCorrect) {
+      score++;
+      streak++;
+      memberStats[member].correctGuesses++;
+      animateCorrect();
+      if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('highScore', highScore);
+      }
+    } else {
+      streak = 0;
+    }
+
+    showFeedback(
+      isCorrect ? '✅ Correct!' : `❌ Nope! It was ${currentClip.member}.`,
+      isCorrect
+    );
+  }
+
+	function updateStats() {
+	  const accuracy = attempts === 0 ? 0 : ((score / attempts) * 100).toFixed(1);
+
+	  // Only animate score — don't touch it elsewhere
+	  const scoreElement = document.getElementById('animatedScore');
+	  if (scoreElement) {
+		animateCountUp(scoreElement, score, 0);
+	  }
+
+	  document.getElementById('attemptsCount').textContent = attempts;
+	  document.getElementById('accuracyPercent').textContent = accuracy;
+	  document.getElementById('streakDisplay').textContent = `🔥 Streak: ${streak}`;
+	  document.getElementById('highScoreDisplay').textContent = `🏆 High Score: ${highScore}`;
+	}
+
+  function renderMemberStats() {
+    const container = document.getElementById('memberStats');
+    if (!container) return;
+
+    container.innerHTML = '<h3>📊 Member Accuracy</h3>';
+    const list = document.createElement('ul');
+
+    for (const [member, stats] of Object.entries(memberStats)) {
+      const accuracy = stats.appearances === 0 ? '—' :
+        ((stats.correctGuesses / stats.appearances) * 100).toFixed(1) + '%';
+      const li = document.createElement('li');
+      li.textContent = `${member}: ${stats.correctGuesses} / ${stats.appearances} (${accuracy})`;
+      list.appendChild(li);
+    }
+
+    container.appendChild(list);
+  }
+
+  function resetScore() {
+    score = 0;
+    attempts = 0;
+    streak = 0;
+    for (const member in memberStats) {
+      memberStats[member] = { appearances: 0, correctGuesses: 0 };
+    }
+    updateStats();
+    renderMemberStats();
+  }
+
+	function animateCorrect() {
+	  document.body.classList.add('correct-flash');
+	  setTimeout(() => {
+		document.body.classList.remove('correct-flash');
+	  }, 300);
+	}
+
+
+  function showFeedback(message, isCorrect) {
+    const feedback = document.getElementById('feedback');
+    feedback.textContent = message;
+    feedback.className = `show ${isCorrect ? 'correct' : 'incorrect'}`;
+    setTimeout(() => {
+      feedback.classList.remove('show', 'correct', 'incorrect');
+      updateStats();
+      renderMemberStats();
+      loadNextClip();
+    }, 1500);
+  }
+  
+	function animateCountUp(element, newValue, duration = 1000) {
+	  const start = parseInt(element.textContent) || 0;
+
+	  if (start === newValue) return;
+
+	  const startTime = performance.now();
+
+	  function update(currentTime) {
+		const elapsed = currentTime - startTime;
+		const progress = Math.min(elapsed / duration, 1);
+		const currentValue = Math.floor(start + (newValue - start) * progress);
+
+		element.textContent = currentValue;
+
+		if (progress < 1) {
+		  requestAnimationFrame(update);
+		}
+	  }
+
+	  requestAnimationFrame(update);
+	}
+	
+	playBtn.addEventListener('click', async () => {
+	  if (canvasAudioCtx && canvasAudioCtx.state === 'suspended') {
+		await canvasAudioCtx.resume();
+	  }
+
+	  if (audio.paused) {
+		await audio.play();
+	  } else {
+		audio.pause();
+	  }
+
+	  // 👇 Use your helper instead of manually toggling icons
+	  updatePlayPauseIcon(!audio.paused);
+	});
+	
+	function updatePlayPauseIcon(isPlaying) {
+	  const playIcon = document.getElementById('playIcon');
+	  const pauseIcon = document.getElementById('pauseIcon');
+
+	  if (isPlaying) {
+		playIcon.classList.add('hidden');
+		pauseIcon.classList.remove('hidden');
+	  } else {
+		playIcon.classList.remove('hidden');
+		pauseIcon.classList.add('hidden');
+	  }
+	}
+
+  window.onload = () => {
+    loadClips();
+    document.getElementById('resetButton').addEventListener('click', resetScore);
+    updateStats();
+  };
+</script>
+</body>
+</html>
