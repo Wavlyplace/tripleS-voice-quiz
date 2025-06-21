@@ -930,7 +930,347 @@
     "Lyric": "Begins from now our story"
   },
   {
-    "ID": 93,
+    "ID": 94,
+    "Member": "All",
+    "Filename": "all_01.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:07-0:23",
+    "Difficulty": "Easy",
+    "Notes": "Chorus",
+    "Lyric": "Dance on my wave, yeah, you know I like to make you dance / Dance to my WAV, yeah, you know I like to bounce it / Dance on my wave, yeah, you know I like to make you dance / Don't you make me leave, wanna touch you in the sine flow"
+  },
+  {
+    "ID": 95,
+    "Member": "Seoah",
+    "Filename": "seoah_01.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:23-0:30",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "불꺼진 방에 누웠을때 또 / 이런저런 생각 들이 날 follow"
+  },
+  {
+    "ID": 96,
+    "Member": "Chaewon",
+    "Filename": "chaewon_01.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:30-0:34",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "숨기고픈 마음없어, not anymore"
+  },
+  {
+    "ID": 97,
+    "Member": "Sullin",
+    "Filename": "sullin_01.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:34-0:36",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "Tryna find a way"
+  },
+  {
+    "ID": 98,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_01.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:36-0:40",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Won't you tell me right now? / 지금 뭐 해 right now"
+  },
+  {
+    "ID": 99,
+    "Member": "Chaewon",
+    "Filename": "chaewon_02.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:40-0:43",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Yeah, I'm thinking out loud / 너를 thinking about"
+  },
+  {
+    "ID": 100,
+    "Member": "Seoah",
+    "Filename": "seoah_02.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:43-0:48",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "이런 맘을 흘려보내 너에게 all night long"
+  },
+  {
+    "ID": 101,
+    "Member": "Sullin",
+    "Filename": "sullin_02.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:48-0:51",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "I know that you're up just like me right now"
+  },
+  {
+    "ID": 102,
+    "Member": "All",
+    "Filename": "all_02.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "0:51-1:06",
+    "Difficulty": "Easy",
+    "Notes": "Chorus",
+    "Lyric": "Dance on my wave, yeah, you know I like to make you dance / Dance to my WAV, yeah, you know I like to bounce it / Dance on my wave, yeah, you know I like to make you dance / Don't you make me leave, wanna touch you in the sine flow"
+  },
+  {
+    "ID": 103,
+    "Member": "Chaewon",
+    "Filename": "chaewon_03.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:06-1:09",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "You know I gotta make you say, make you say"
+  },
+  {
+    "ID": 104,
+    "Member": "Sullin",
+    "Filename": "sullin_03.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:09-1:12",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "I wanna talk in private all night"
+  },
+  {
+    "ID": 105,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_02.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:12-1:16",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "또 뛰는 심장 how I feel, I gotta let you know"
+  },
+  {
+    "ID": 106,
+    "Member": "Seoah",
+    "Filename": "seoah_03.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:16-1:17",
+    "Difficulty": "Hard",
+    "Notes": "Post-Chorus",
+    "Lyric": "And then you'll wanna be mine"
+  },
+  {
+    "ID": 107,
+    "Member": "Chaewon",
+    "Filename": "chaewon_04.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:17-1:19",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "쿨하게 말해 I don't mind"
+  },
+  {
+    "ID": 108,
+    "Member": "Sullin",
+    "Filename": "sullin_04.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:19-1:23",
+    "Difficulty": "Easy",
+    "Notes": "Verse 2",
+    "Lyric": "Dare I cross the line 남았어 한 발짝"
+  },
+  {
+    "ID": 109,
+    "Member": "Chaewon",
+    "Filename": "chaewon_05.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:23-1:27",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "지겨워 question mark / Gonna make you mine, yeah"
+  },
+  {
+    "ID": 110,
+    "Member": "Seoah",
+    "Filename": "seoah_04.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:27-1:31",
+    "Difficulty": "Easy",
+    "Notes": "Verse 2",
+    "Lyric": "널 가져올래 내 옆에 (내 옆에)"
+  },
+  {
+    "ID": 111,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_03.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:31-1:34",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "이젠 너에게 보낼게 넌 답해"
+  },
+  {
+    "ID": 112,
+    "Member": "Chaewon",
+    "Filename": "chaewon_06.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:33-1:37",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Won't you tell me right now? / 지금 뭐 해 right now"
+  },
+  {
+    "ID": 113,
+    "Member": "Sullin",
+    "Filename": "sullin_05.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:37-1:40",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Yeah, I'm thinking out loud / 너를 thinking about"
+  },
+  {
+    "ID": 114,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_04.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:40-1:45",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "이런 맘을 흘려보내 너에게 all night long"
+  },
+  {
+    "ID": 115,
+    "Member": "Seoah",
+    "Filename": "seoah_05.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:45-1:48",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "I know that you're up just like me right now"
+  },
+  {
+    "ID": 116,
+    "Member": "All",
+    "Filename": "all_03.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "1:48-2:03",
+    "Difficulty": "Easy",
+    "Notes": "Chorus",
+    "Lyric": "Dance on my wave, yeah, you know I like to make you dance / Dance to my WAV, yeah, you know I like to bounce it / Dance on my wave, yeah, you know I like to make you dance / Don't you make me leave, wanna touch you in the sine flow"
+  },
+  {
+    "ID": 117,
+    "Member": "Seoah",
+    "Filename": "seoah_06.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:03-2:06",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "You know I gotta make you say, make you say"
+  },
+  {
+    "ID": 118,
+    "Member": "Chaewon",
+    "Filename": "chaewon_07.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:06-2:10",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "I wanna talk in private all night"
+  },
+  {
+    "ID": 119,
+    "Member": "Sullin",
+    "Filename": "sullin_06.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:10-2:12",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "모른척 하지마"
+  },
+  {
+    "ID": 120,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_05.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:12-2:17",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "너의 맘을 내게 말해 오늘이 지나면 time out"
+  },
+  {
+    "ID": 121,
+    "Member": "All",
+    "Filename": "all_04.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:17-2:32",
+    "Difficulty": "Easy",
+    "Notes": "Chorus",
+    "Lyric": "Dance on my wave, yeah, you know I like to make you dance / Dance to my WAV, yeah, you know I like to bounce it / Dance on my wave, yeah, you know I like to make you dance / Don't you make me leave, wanna touch you in the sine flow"
+  },
+  {
+    "ID": 122,
+    "Member": "Chaewon",
+    "Filename": "chaewon_08.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:32-2:35",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "You know I gotta make you say, make you say"
+  },
+  {
+    "ID": 123,
+    "Member": "Sullin",
+    "Filename": "sullin_07.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:35-2:38",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "I wanna talk in private all night"
+  },
+  {
+    "ID": 124,
+    "Member": "Chaewon",
+    "Filename": "chaewon_09.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:38-2:42",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "또 뛰는 심장 how I feel gotta let you know"
+  },
+  {
+    "ID": 125,
+    "Member": "Jiyeon",
+    "Filename": "jiyeon_06.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:42-2:43",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "And then you wanna be mine"
+  },
+  {
+    "ID": 126,
+    "Member": "Seoah",
+    "Filename": "seoah_07.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:43-2:45",
+    "Difficulty": "Medium",
+    "Notes": "Post-Chorus",
+    "Lyric": "쿨하게 말해 I don't mind"
+  },
+  {
+    "ID": 127,
+    "Member": "Chaewon",
+    "Filename": "chaewon_10.mp3",
+    "Song": "Inner Dance",
+    "Timestamp": "2:45-3:00",
+    "Difficulty": "Medium",
+    "Notes": "Outro",
+    "Lyric": "Yeah, what's your move, can you feel the groovin'? / I'm tryna move, vibin' what you grove to / You got the moves, can you feel the groovin'? / Don't try to move, sine flow got us groovin'"
+  },
+  {
+    "ID": 128,
     "Member": "Seoyeon",
     "Filename": "seoyeon_01.mp3",
     "Song": "Girls Never Die",
@@ -940,7 +1280,7 @@
     "Lyric": "다시 해보자"
   },
   {
-    "ID": 94,
+    "ID": 129,
     "Member": "Seoyeon",
     "Filename": "seoyeon_02.mp3",
     "Song": "Girls Never Die",
@@ -950,7 +1290,7 @@
     "Lyric": "Yeah"
   },
   {
-    "ID": 95,
+    "ID": 130,
     "Member": "Seoyeon",
     "Filename": "seoyeon_03.mp3",
     "Song": "Girls Never Die",
@@ -960,7 +1300,7 @@
     "Lyric": "Let's go"
   },
   {
-    "ID": 96,
+    "ID": 131,
     "Member": "Seoyeon",
     "Filename": "seoyeon_04.mp3",
     "Song": "Girls Never Die",
@@ -970,7 +1310,7 @@
     "Lyric": "Woo"
   },
   {
-    "ID": 97,
+    "ID": 132,
     "Member": "Seoyeon",
     "Filename": "seoyeon_05.mp3",
     "Song": "Girls Never Die",
@@ -980,7 +1320,7 @@
     "Lyric": "Let's go"
   },
   {
-    "ID": 98,
+    "ID": 133,
     "Member": "Hayeon",
     "Filename": "hayeon_01.mp3",
     "Song": "Girls Never Die",
@@ -990,7 +1330,7 @@
     "Lyric": "세상은 늘 화려한 꿈 내 눈이 멀게"
   },
   {
-    "ID": 99,
+    "ID": 134,
     "Member": "Yeonji",
     "Filename": "yeonji_01.mp3",
     "Song": "Girls Never Die",
@@ -1000,7 +1340,7 @@
     "Lyric": "눈부셔 shine better"
   },
   {
-    "ID": 100,
+    "ID": 135,
     "Member": "Soomin",
     "Filename": "soomin_01.mp3",
     "Song": "Girls Never Die",
@@ -1010,7 +1350,7 @@
     "Lyric": "난 여기 보이지 않겠지 점점"
   },
   {
-    "ID": 101,
+    "ID": 136,
     "Member": "Seoah",
     "Filename": "seoah_01.mp3",
     "Song": "Girls Never Die",
@@ -1020,7 +1360,7 @@
     "Lyric": "초라한 내가 싫어"
   },
   {
-    "ID": 102,
+    "ID": 137,
     "Member": "Joobin",
     "Filename": "joobin_01.mp3",
     "Song": "Girls Never Die",
@@ -1030,7 +1370,7 @@
     "Lyric": "날 보이기도 싫어"
   },
   {
-    "ID": 103,
+    "ID": 138,
     "Member": "Yubin",
     "Filename": "yubin_01.mp3",
     "Song": "Girls Never Die",
@@ -1040,7 +1380,7 @@
     "Lyric": "짙게 화장했던 이유"
   },
   {
-    "ID": 104,
+    "ID": 139,
     "Member": "Hyerin",
     "Filename": "hyerin_01.mp3",
     "Song": "Girls Never Die",
@@ -1050,7 +1390,7 @@
     "Lyric": "필터 꼈던 이유 알겠니"
   },
   {
-    "ID": 105,
+    "ID": 140,
     "Member": "Sullin",
     "Filename": "sullin_01.mp3",
     "Song": "Girls Never Die",
@@ -1060,7 +1400,7 @@
     "Lyric": "이젠 알겠니"
   },
   {
-    "ID": 106,
+    "ID": 141,
     "Member": "Sohyun",
     "Filename": "sohyun_01.mp3",
     "Song": "Girls Never Die",
@@ -1070,7 +1410,7 @@
     "Lyric": "비켜봐 봐 비켜 핑계는"
   },
   {
-    "ID": 107,
+    "ID": 142,
     "Member": "Jiwoo",
     "Filename": "jiwoo_01.mp3",
     "Song": "Girls Never Die",
@@ -1080,7 +1420,7 @@
     "Lyric": "우린 본질 속에 진주가 될래"
   },
   {
-    "ID": 108,
+    "ID": 143,
     "Member": "Nakyoung",
     "Filename": "nakyoung_01.mp3",
     "Song": "Girls Never Die",
@@ -1090,7 +1430,7 @@
     "Lyric": "꿈의 난이도 좀 더 난 높일게"
   },
   {
-    "ID": 109,
+    "ID": 144,
     "Member": "Lynn",
     "Filename": "lynn_01.mp3",
     "Song": "Girls Never Die",
@@ -1100,7 +1440,7 @@
     "Lyric": "고통 시련 다듬어 내가 될게"
   },
   {
-    "ID": 110,
+    "ID": 145,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_01.mp3",
     "Song": "Girls Never Die",
@@ -1110,7 +1450,7 @@
     "Lyric": "이제 조금 알겠어"
   },
   {
-    "ID": 111,
+    "ID": 146,
     "Member": "Kotone",
     "Filename": "kotone_01.mp3",
     "Song": "Girls Never Die",
@@ -1120,7 +1460,7 @@
     "Lyric": "왜 날 힘들게 울게만 둔 건지"
   },
   {
-    "ID": 112,
+    "ID": 147,
     "Member": "Dahyun",
     "Filename": "dahyun_01.mp3",
     "Song": "Girls Never Die",
@@ -1130,7 +1470,7 @@
     "Lyric": "Hold me closer, broken myself, yeah"
   },
   {
-    "ID": 113,
+    "ID": 148,
     "Member": "Xinyu",
     "Filename": "xinyu_01.mp3",
     "Song": "Girls Never Die",
@@ -1140,7 +1480,7 @@
     "Lyric": "날 따라와 달라진 날"
   },
   {
-    "ID": 114,
+    "ID": 149,
     "Member": "Nien",
     "Filename": "nien_01.mp3",
     "Song": "Girls Never Die",
@@ -1150,7 +1490,7 @@
     "Lyric": "하나가 되자"
   },
   {
-    "ID": 115,
+    "ID": 150,
     "Member": "Kaede",
     "Filename": "kaede_01.mp3",
     "Song": "Girls Never Die",
@@ -1160,7 +1500,7 @@
     "Lyric": "너의 꿈이 내가 되고"
   },
   {
-    "ID": 116,
+    "ID": 151,
     "Member": "Mayu",
     "Filename": "mayu_01.mp3",
     "Song": "Girls Never Die",
@@ -1170,7 +1510,7 @@
     "Lyric": "우리 함께 꾸는 꿈"
   },
   {
-    "ID": 117,
+    "ID": 152,
     "Member": "Shion",
     "Filename": "shion_01.mp3",
     "Song": "Girls Never Die",
@@ -1180,7 +1520,7 @@
     "Lyric": "두려움 따위다"
   },
   {
-    "ID": 118,
+    "ID": 153,
     "Member": "Chaewon",
     "Filename": "chaewon_01.mp3",
     "Song": "Girls Never Die",
@@ -1190,7 +1530,7 @@
     "Lyric": "함께 있다면은"
   },
   {
-    "ID": 119,
+    "ID": 154,
     "Member": "Jiyeon",
     "Filename": "jiyeon_01.mp3",
     "Song": "Girls Never Die",
@@ -1200,7 +1540,7 @@
     "Lyric": "이제 무서울 것 없지"
   },
   {
-    "ID": 120,
+    "ID": 155,
     "Member": "Yooyeon",
     "Filename": "yooyeon_01.mp3",
     "Song": "Girls Never Die",
@@ -1210,7 +1550,7 @@
     "Lyric": "다시 해볼까"
   },
   {
-    "ID": 121,
+    "ID": 156,
     "Member": "Yooyeon",
     "Filename": "yooyeon_02.mp3",
     "Song": "Girls Never Die",
@@ -1220,7 +1560,7 @@
     "Lyric": "smaerd ruof-ytnewt htiw eno sa etinu eW"
   },
   {
-    "ID": 122,
+    "ID": 157,
     "Member": "Dahyun",
     "Filename": "dahyun_02.mp3",
     "Song": "Girls Never Die",
@@ -1230,7 +1570,7 @@
     "Lyric": "La-la, oh"
   },
   {
-    "ID": 123,
+    "ID": 158,
     "Member": "Jiwoo",
     "Filename": "jiwoo_02.mp3",
     "Song": "Girls Never Die",
@@ -1240,7 +1580,7 @@
     "Lyric": "Never cry"
   },
   {
-    "ID": 124,
+    "ID": 159,
     "Member": "Jiwoo",
     "Filename": "jiwoo_03.mp3",
     "Song": "Girls Never Die",
@@ -1250,7 +1590,7 @@
     "Lyric": "Girls never die, 절대 never cry, oh"
   },
   {
-    "ID": 125,
+    "ID": 160,
     "Member": "Dahyun",
     "Filename": "dahyun_03.mp3",
     "Song": "Girls Never Die",
@@ -1260,7 +1600,7 @@
     "Lyric": "끝까지 가볼래 포기는 안 할래"
   },
   {
-    "ID": 126,
+    "ID": 161,
     "Member": "Dahyun",
     "Filename": "dahyun_04.mp3",
     "Song": "Girls Never Die",
@@ -1270,7 +1610,7 @@
     "Lyric": "Girls never die, 절대 never cry"
   },
   {
-    "ID": 127,
+    "ID": 162,
     "Member": "Dahyun",
     "Filename": "dahyun_01.mp3",
     "Song": "Door",
@@ -1280,7 +1620,7 @@
     "Lyric": "문을 열어줘 세상은 너무 차가워 / 내버려 두지마"
   },
   {
-    "ID": 128,
+    "ID": 163,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_01.mp3",
     "Song": "Door",
@@ -1290,7 +1630,7 @@
     "Lyric": "기나긴 이 밤 끝이 보이지 않아 Oh wuh"
   },
   {
-    "ID": 129,
+    "ID": 164,
     "Member": "Nien",
     "Filename": "nien_01.mp3",
     "Song": "Door",
@@ -1300,7 +1640,7 @@
     "Lyric": "첫 눈이 내리고 있어 / 너와 봤다면 좋았을 걸"
   },
   {
-    "ID": 130,
+    "ID": 165,
     "Member": "Kaede",
     "Filename": "kaede_01.mp3",
     "Song": "Door",
@@ -1310,7 +1650,7 @@
     "Lyric": "너의 발자국을 따라서 / 걷는 상상을 해"
   },
   {
-    "ID": 131,
+    "ID": 166,
     "Member": "Jiwoo",
     "Filename": "jiwoo_01.mp3",
     "Song": "Door",
@@ -1320,7 +1660,7 @@
     "Lyric": "그저 너의 일부가 되고파서 / 혹시 나의 전부를 다 버려야 해도 / 괜찮은 걸 아니"
   },
   {
-    "ID": 132,
+    "ID": 167,
     "Member": "Dahyun",
     "Filename": "dahyun_02.mp3",
     "Song": "Door",
@@ -1330,7 +1670,7 @@
     "Lyric": "Everything in everywhere / 들리니"
   },
   {
-    "ID": 133,
+    "ID": 168,
     "Member": "Kaede",
     "Filename": "kaede_02.mp3",
     "Song": "Door",
@@ -1340,7 +1680,7 @@
     "Lyric": "상상한 적 없는 / 네가 없는 나의 하늘은"
   },
   {
-    "ID": 134,
+    "ID": 169,
     "Member": "Nien",
     "Filename": "nien_02.mp3",
     "Song": "Door",
@@ -1350,7 +1690,7 @@
     "Lyric": "매일 흐리고 또 느리지"
   },
   {
-    "ID": 135,
+    "ID": 170,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_02.mp3",
     "Song": "Door",
@@ -1360,7 +1700,7 @@
     "Lyric": "내일은 눈이 그치고 / 비가 내릴 것 같은데"
   },
   {
-    "ID": 136,
+    "ID": 171,
     "Member": "Jiwoo",
     "Filename": "jiwoo_02.mp3",
     "Song": "Door",
@@ -1370,7 +1710,7 @@
     "Lyric": "우산이 없네"
   },
   {
-    "ID": 137,
+    "ID": 172,
     "Member": "Nien",
     "Filename": "nien_03.mp3",
     "Song": "Door",
@@ -1380,7 +1720,7 @@
     "Lyric": "혼돈 속에서 Drive me crazy"
   },
   {
-    "ID": 138,
+    "ID": 173,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_03.mp3",
     "Song": "Door",
@@ -1390,7 +1730,7 @@
     "Lyric": "어디서부터 엇갈리게 됐지"
   },
   {
-    "ID": 139,
+    "ID": 174,
     "Member": "Kaede",
     "Filename": "kaede_03.mp3",
     "Song": "Door",
@@ -1400,7 +1740,7 @@
     "Lyric": "너를 만나 묻고 싶었던 게 많아"
   },
   {
-    "ID": 140,
+    "ID": 175,
     "Member": "Dahyun",
     "Filename": "dahyun_03.mp3",
     "Song": "Door",
@@ -1410,7 +1750,7 @@
     "Lyric": "그저 너의 일부가 되고파서 / 혹시 나의 전부를 다 버려야 해도 / 괜찮은 걸 아니"
   },
   {
-    "ID": 141,
+    "ID": 176,
     "Member": "Jiwoo",
     "Filename": "jiwoo_03.mp3",
     "Song": "Door",
@@ -1420,7 +1760,7 @@
     "Lyric": "Everything in everywhere / 들리니"
   },
   {
-    "ID": 142,
+    "ID": 177,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_04.mp3",
     "Song": "Door",
@@ -1430,7 +1770,7 @@
     "Lyric": "상상한 적 없는 / 네가 없는 나의 하루는"
   },
   {
-    "ID": 143,
+    "ID": 178,
     "Member": "Nien",
     "Filename": "nien_04.mp3",
     "Song": "Door",
@@ -1440,7 +1780,7 @@
     "Lyric": "매일 흐리고 또 느리지"
   },
   {
-    "ID": 144,
+    "ID": 179,
     "Member": "Dahyun",
     "Filename": "dahyun_04.mp3",
     "Song": "Door",
@@ -1450,7 +1790,7 @@
     "Lyric": "내일은 눈이 그치고 / 비가 내릴 것 같은데 / 내겐 네가 없네"
   },
   {
-    "ID": 145,
+    "ID": 180,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_05.mp3",
     "Song": "Door",
@@ -1460,7 +1800,7 @@
     "Lyric": "다시 태어나 다른 모습으로 / 변해버려도 난 결국 다시 너"
   },
   {
-    "ID": 146,
+    "ID": 181,
     "Member": "Dahyun",
     "Filename": "dahyun_05.mp3",
     "Song": "Door",
@@ -1470,7 +1810,7 @@
     "Lyric": "So please come back to me / It's not over"
   },
   {
-    "ID": 147,
+    "ID": 182,
     "Member": "Nien",
     "Filename": "nien_05.mp3",
     "Song": "Door",
@@ -1480,7 +1820,7 @@
     "Lyric": "매일 흐리고 또 느리지"
   },
   {
-    "ID": 148,
+    "ID": 183,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_06.mp3",
     "Song": "Door",
@@ -1490,7 +1830,7 @@
     "Lyric": "내일은 눈이 그치고 / 비가 내릴 것 같은데"
   },
   {
-    "ID": 149,
+    "ID": 184,
     "Member": "Dahyun",
     "Filename": "dahyun_06.mp3",
     "Song": "Door",
@@ -1500,7 +1840,7 @@
     "Lyric": "우산이 없네"
   },
   {
-    "ID": 150,
+    "ID": 185,
     "Member": "Shion",
     "Filename": "shion_01.mp3",
     "Song": "Just Do It",
@@ -1510,7 +1850,7 @@
     "Lyric": "우린 미완성인데도 perfection, uh"
   },
   {
-    "ID": 151,
+    "ID": 186,
     "Member": "Lynn",
     "Filename": "lynn_01.mp3",
     "Song": "Just Do It",
@@ -1520,7 +1860,7 @@
     "Lyric": "아직은 날 채울 필요는 없잖아, yeah"
   },
   {
-    "ID": 152,
+    "ID": 187,
     "Member": "Joobin",
     "Filename": "joobin_01.mp3",
     "Song": "Just Do It",
@@ -1530,7 +1870,7 @@
     "Lyric": "가능성 no limit"
   },
   {
-    "ID": 153,
+    "ID": 188,
     "Member": "Hayeon",
     "Filename": "hayeon_01.mp3",
     "Song": "Just Do It",
@@ -1540,7 +1880,7 @@
     "Lyric": "끝없는 vision"
   },
   {
-    "ID": 154,
+    "ID": 189,
     "Member": "Lynn",
     "Filename": "lynn_02.mp3",
     "Song": "Just Do It",
@@ -1550,7 +1890,7 @@
     "Lyric": "우리는 전부 새로운 걸, 다 something new"
   },
   {
-    "ID": 155,
+    "ID": 190,
     "Member": "Shion",
     "Filename": "shion_02.mp3",
     "Song": "Just Do It",
@@ -1560,7 +1900,7 @@
     "Lyric": "(You know?)"
   },
   {
-    "ID": 156,
+    "ID": 191,
     "Member": "Joobin",
     "Filename": "joobin_02.mp3",
     "Song": "Just Do It",
@@ -1570,7 +1910,7 @@
     "Lyric": "흔들려도 피어나는 우리들"
   },
   {
-    "ID": 157,
+    "ID": 192,
     "Member": "Lynn",
     "Filename": "lynn_03.mp3",
     "Song": "Just Do It",
@@ -1580,7 +1920,7 @@
     "Lyric": "Cause I do it all"
   },
   {
-    "ID": 158,
+    "ID": 193,
     "Member": "Shion",
     "Filename": "shion_03.mp3",
     "Song": "Just Do It",
@@ -1590,7 +1930,7 @@
     "Lyric": "간절한 마음에"
   },
   {
-    "ID": 159,
+    "ID": 194,
     "Member": "Hayeon",
     "Filename": "hayeon_02.mp3",
     "Song": "Just Do It",
@@ -1600,7 +1940,7 @@
     "Lyric": "Uhm, yeah / One step, 더 new trend / 우린 남다르지 madness"
   },
   {
-    "ID": 160,
+    "ID": 195,
     "Member": "Lynn",
     "Filename": "lynn_04.mp3",
     "Song": "Just Do It",
@@ -1610,7 +1950,7 @@
     "Lyric": "두려움은 없지 난 out of this world / 지켜봐 지금, right now"
   },
   {
-    "ID": 161,
+    "ID": 196,
     "Member": "Joobin",
     "Filename": "joobin_03.mp3",
     "Song": "Just Do It",
@@ -1620,7 +1960,7 @@
     "Lyric": "Yeah, I like it 'cause I like it"
   },
   {
-    "ID": 162,
+    "ID": 197,
     "Member": "Hayeon",
     "Filename": "hayeon_03.mp3",
     "Song": "Just Do It",
@@ -1630,7 +1970,7 @@
     "Lyric": "번져가는 감정들은 무지개 빛, love it"
   },
   {
-    "ID": 163,
+    "ID": 198,
     "Member": "Shion",
     "Filename": "shion_04.mp3",
     "Song": "Just Do It",
@@ -1640,7 +1980,7 @@
     "Lyric": "I will do it all, 자유로운 이 순간"
   },
   {
-    "ID": 164,
+    "ID": 199,
     "Member": "Shion",
     "Filename": "shion_05.mp3",
     "Song": "Just Do It",
@@ -1650,7 +1990,7 @@
     "Lyric": "흔들려도 피어나는 우리들"
   },
   {
-    "ID": 165,
+    "ID": 200,
     "Member": "Joobin",
     "Filename": "joobin_04.mp3",
     "Song": "Just Do It",
@@ -1660,7 +2000,7 @@
     "Lyric": "Cause I do it all"
   },
   {
-    "ID": 166,
+    "ID": 201,
     "Member": "Hayeon",
     "Filename": "hayeon_04.mp3",
     "Song": "Just Do It",
@@ -1670,7 +2010,7 @@
     "Lyric": "간절한 마음에"
   },
   {
-    "ID": 167,
+    "ID": 202,
     "Member": "Joobin",
     "Filename": "joobin_05.mp3",
     "Song": "Just Do It",
@@ -1680,7 +2020,7 @@
     "Lyric": "시간이 쌓인 그 후의 shine bright"
   },
   {
-    "ID": 168,
+    "ID": 203,
     "Member": "Hayeon",
     "Filename": "hayeon_05.mp3",
     "Song": "Just Do It",
@@ -1690,7 +2030,7 @@
     "Lyric": "끝없이 반복될 고난, oh, no"
   },
   {
-    "ID": 169,
+    "ID": 204,
     "Member": "Lynn",
     "Filename": "lynn_05.mp3",
     "Song": "Just Do It",
@@ -1700,7 +2040,7 @@
     "Lyric": "그렇대도 뭐 어때?"
   },
   {
-    "ID": 170,
+    "ID": 205,
     "Member": "Joobin",
     "Filename": "joobin_06.mp3",
     "Song": "Just Do It",
@@ -1710,7 +2050,7 @@
     "Lyric": "또 다시 시작하면 돼"
   },
   {
-    "ID": 171,
+    "ID": 206,
     "Member": "Shion",
     "Filename": "shion_06.mp3",
     "Song": "Just Do It",
@@ -1720,7 +2060,7 @@
     "Lyric": "우리는 one and only, 새로운 icon"
   },
   {
-    "ID": 172,
+    "ID": 207,
     "Member": "Joobin",
     "Filename": "Joobin_07.mp3",
     "Song": "Just Do It",
@@ -1730,7 +2070,7 @@
     "Lyric": "흔들려도 피어나는 우리들"
   },
   {
-    "ID": 173,
+    "ID": 208,
     "Member": "Lynn",
     "Filename": "lynn_06.mp3",
     "Song": "Just Do It",
@@ -1740,7 +2080,7 @@
     "Lyric": "Cause I do it all"
   },
   {
-    "ID": 174,
+    "ID": 209,
     "Member": "Shion",
     "Filename": "shion_07.mp3",
     "Song": "Just Do It",
@@ -1750,7 +2090,7 @@
     "Lyric": "간절한 마음에"
   },
   {
-    "ID": 175,
+    "ID": 210,
     "Member": "Shion",
     "Filename": "shion_08.mp3",
     "Song": "Just Do It",
@@ -1760,7 +2100,7 @@
     "Lyric": "Whatever it takes"
   },
   {
-    "ID": 176,
+    "ID": 211,
     "Member": "Yooyeon",
     "Filename": "yooyeon_01.mp3",
     "Song": "Invincible",
@@ -1770,7 +2110,7 @@
     "Lyric": "반짝임 가득한 하늘 위 / 올려보고 깨달은 내 안의 star"
   },
   {
-    "ID": 177,
+    "ID": 212,
     "Member": "Kotone",
     "Filename": "kotone_01.mp3",
     "Song": "Invincible",
@@ -1780,7 +2120,7 @@
     "Lyric": "저 별로 뻗어본 두 손"
   },
   {
-    "ID": 178,
+    "ID": 213,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_01.mp3",
     "Song": "Invincible",
@@ -1790,7 +2130,7 @@
     "Lyric": "Live and die for my dream"
   },
   {
-    "ID": 179,
+    "ID": 214,
     "Member": "Jiwoo",
     "Filename": "jiwoo_01.mp3",
     "Song": "Invincible",
@@ -1800,7 +2140,7 @@
     "Lyric": "Let's create the raindrop tears"
   },
   {
-    "ID": 180,
+    "ID": 215,
     "Member": "Nakyoung",
     "Filename": "nakyoung_01.mp3",
     "Song": "Invincible",
@@ -1810,7 +2150,7 @@
     "Lyric": "부딪히면 난 더욱 단단해져 가"
   },
   {
-    "ID": 181,
+    "ID": 216,
     "Member": "Mayu",
     "Filename": "mayu_01.mp3",
     "Song": "Invincible",
@@ -1820,7 +2160,7 @@
     "Lyric": "Just like Tiffany and 꿈"
   },
   {
-    "ID": 182,
+    "ID": 217,
     "Member": "Kotone",
     "Filename": "kotone_02.mp3",
     "Song": "Invincible",
@@ -1830,7 +2170,7 @@
     "Lyric": "빛을 비춰 ever"
   },
   {
-    "ID": 183,
+    "ID": 218,
     "Member": "Yeonji",
     "Filename": "yeonji_01.mp3",
     "Song": "Invincible",
@@ -1840,7 +2180,7 @@
     "Lyric": "깊은 어둠에도 환히 빛나"
   },
   {
-    "ID": 184,
+    "ID": 219,
     "Member": "Soomin",
     "Filename": "soomin_01.mp3",
     "Song": "Invincible",
@@ -1850,7 +2190,7 @@
     "Lyric": "착해 보여? 내 속은 강해"
   },
   {
-    "ID": 185,
+    "ID": 220,
     "Member": "Yooyeon",
     "Filename": "yooyeon_02.mp3",
     "Song": "Invincible",
@@ -1860,7 +2200,7 @@
     "Lyric": "Bling, bling"
   },
   {
-    "ID": 186,
+    "ID": 221,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_02.mp3",
     "Song": "Invincible",
@@ -1870,7 +2210,7 @@
     "Lyric": "It's +(KR)ystal Eyes like 환하게"
   },
   {
-    "ID": 187,
+    "ID": 222,
     "Member": "Mayu",
     "Filename": "mayu_02.mp3",
     "Song": "Invincible",
@@ -1880,7 +2220,7 @@
     "Lyric": "Shine brighter, shine brighter"
   },
   {
-    "ID": 188,
+    "ID": 223,
     "Member": "Nakyoung",
     "Filename": "nakyoung_02.mp3",
     "Song": "Invincible",
@@ -1890,7 +2230,7 @@
     "Lyric": "Cut the diamond / Cut it like diamond"
   },
   {
-    "ID": 189,
+    "ID": 224,
     "Member": "Jiwoo",
     "Filename": "jiwoo_02.mp3",
     "Song": "Invincible",
@@ -1900,7 +2240,7 @@
     "Lyric": "투명한 섬광들의 축제 / 비처럼 내리는 firework"
   },
   {
-    "ID": 190,
+    "ID": 225,
     "Member": "Soomin",
     "Filename": "soomin_02.mp3",
     "Song": "Invincible",
@@ -1910,7 +2250,7 @@
     "Lyric": "어두워야 더욱 빛나"
   },
   {
-    "ID": 191,
+    "ID": 226,
     "Member": "Yeonji",
     "Filename": "yeonji_02.mp3",
     "Song": "Invincible",
@@ -1920,7 +2260,7 @@
     "Lyric": "Live and die for my dream"
   },
   {
-    "ID": 192,
+    "ID": 227,
     "Member": "Nakyoung",
     "Filename": "nakyoung_03.mp3",
     "Song": "Invincible",
@@ -1930,7 +2270,7 @@
     "Lyric": "보이니 secret of my dream? / 수 많은 다각형의 Dimension"
   },
   {
-    "ID": 193,
+    "ID": 228,
     "Member": "Kotone",
     "Filename": "kotone_03.mp3",
     "Song": "Invincible",
@@ -1940,7 +2280,7 @@
     "Lyric": "시간을 달려온 그사이"
   },
   {
-    "ID": 194,
+    "ID": 229,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_03.mp3",
     "Song": "Invincible",
@@ -1950,7 +2290,7 @@
     "Lyric": "Live and die for my dream"
   },
   {
-    "ID": 195,
+    "ID": 230,
     "Member": "Nakyoung",
     "Filename": "nakyoung_4.mp3",
     "Song": "Invincible",
@@ -1960,7 +2300,7 @@
     "Lyric": "Let's create the raindrop tears"
   },
   {
-    "ID": 196,
+    "ID": 231,
     "Member": "Soomin",
     "Filename": "soomin_03.mp3",
     "Song": "Invincible",
@@ -1970,7 +2310,7 @@
     "Lyric": "부딪히면 난 더욱 단단해져 가"
   },
   {
-    "ID": 197,
+    "ID": 232,
     "Member": "Jiwoo",
     "Filename": "jiwoo_03.mp3",
     "Song": "Invincible",
@@ -1980,7 +2320,7 @@
     "Lyric": "꿈은 밝게 더 빛나"
   },
   {
-    "ID": 198,
+    "ID": 233,
     "Member": "Mayu",
     "Filename": "mayu_03.mp3",
     "Song": "Invincible",
@@ -1990,7 +2330,7 @@
     "Lyric": "빛을 비춰 ever"
   },
   {
-    "ID": 199,
+    "ID": 234,
     "Member": "Kotone",
     "Filename": "kotone_04.mp3",
     "Song": "Invincible",
@@ -2000,7 +2340,7 @@
     "Lyric": "깊은 어둠에도 도도해 나"
   },
   {
-    "ID": 200,
+    "ID": 235,
     "Member": "Yooyeon",
     "Filename": "yooyeon_03.mp3",
     "Song": "Invincible",
@@ -2010,7 +2350,7 @@
     "Lyric": "Cool 해 보여? 내 속은 fire"
   },
   {
-    "ID": 201,
+    "ID": 236,
     "Member": "Soomin",
     "Filename": "soomin_04.mp3",
     "Song": "Invincible",
@@ -2020,7 +2360,7 @@
     "Lyric": "Bling, bling"
   },
   {
-    "ID": 202,
+    "ID": 237,
     "Member": "Jiwoo",
     "Filename": "jiwoo_04.mp3",
     "Song": "Invincible",
@@ -2030,7 +2370,7 @@
     "Lyric": "It's +(KR)ystal Eyes like 분명히"
   },
   {
-    "ID": 203,
+    "ID": 238,
     "Member": "Yeonji",
     "Filename": "yeonji_03.mp3",
     "Song": "Invincible",
@@ -2040,7 +2380,7 @@
     "Lyric": "Shine brighter, shine brighter"
   },
   {
-    "ID": 204,
+    "ID": 239,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_04.mp3",
     "Song": "Invincible",
@@ -2050,7 +2390,7 @@
     "Lyric": "Cut the diamond / Cut it like diamond"
   },
   {
-    "ID": 205,
+    "ID": 240,
     "Member": "Yooyeon",
     "Filename": "yooyeon_04.mp3",
     "Song": "Invincible",
@@ -2060,7 +2400,7 @@
     "Lyric": "I can find a diamond dream right now"
   },
   {
-    "ID": 206,
+    "ID": 241,
     "Member": "Mayu",
     "Filename": "mayu_04.mp3",
     "Song": "Invincible",
@@ -2070,7 +2410,7 @@
     "Lyric": "빛이 가득 my heart"
   },
   {
-    "ID": 207,
+    "ID": 242,
     "Member": "Chaeyeon",
     "Filename": "chaeyeon_05.mp3",
     "Song": "Invincible",
@@ -2080,7 +2420,7 @@
     "Lyric": "부서지지 않아"
   },
   {
-    "ID": 208,
+    "ID": 243,
     "Member": "Nakyoung",
     "Filename": "nakyoung_05.mp3",
     "Song": "Invincible",
@@ -2090,7 +2430,7 @@
     "Lyric": "We can find a diamond dream right now"
   },
   {
-    "ID": 209,
+    "ID": 244,
     "Member": "Kotone",
     "Filename": "kotone_05.mp3",
     "Song": "Invincible",
@@ -2100,7 +2440,7 @@
     "Lyric": "더 더 강해져 always"
   },
   {
-    "ID": 210,
+    "ID": 245,
     "Member": "Soomin",
     "Filename": "soomin_05.mp3",
     "Song": "Invincible",
@@ -2110,7 +2450,7 @@
     "Lyric": "Ayy, ayy, I can fly all day"
   },
   {
-    "ID": 211,
+    "ID": 246,
     "Member": "Yeonji",
     "Filename": "yeonji_04.mp3",
     "Song": "Invincible",
@@ -2120,7 +2460,7 @@
     "Lyric": "Shine better"
   },
   {
-    "ID": 212,
+    "ID": 247,
     "Member": "Jiwoo",
     "Filename": "jiwoo_05.mp3",
     "Song": "Invincible",
@@ -2130,7 +2470,7 @@
     "Lyric": "새로 피어난 듯이 / 더 위로 dash"
   },
   {
-    "ID": 213,
+    "ID": 248,
     "Member": "Mayu",
     "Filename": "mayu_05.mp3",
     "Song": "Invincible",
@@ -2140,7 +2480,7 @@
     "Lyric": "Let's fly high through sky like rising"
   },
   {
-    "ID": 214,
+    "ID": 249,
     "Member": "Yeonji",
     "Filename": "yeonji_05.mp3",
     "Song": "Invincible",
@@ -2150,7 +2490,7 @@
     "Lyric": "Shine brighter, shine brighter"
   },
   {
-    "ID": 215,
+    "ID": 250,
     "Member": "Soomin",
     "Filename": "soomin_06.mp3",
     "Song": "Invincible",
@@ -2160,7 +2500,7 @@
     "Lyric": "It's +(KR)ystal Eyes like 투명히"
   },
   {
-    "ID": 216,
+    "ID": 251,
     "Member": "Kotone",
     "Filename": "kotone_06.mp3",
     "Song": "Invincible",
@@ -2170,7 +2510,7 @@
     "Lyric": "Shine brighter, shine brighter"
   },
   {
-    "ID": 217,
+    "ID": 252,
     "Member": "Yooyeon",
     "Filename": "yooyeon_05.mp3",
     "Song": "Invincible",
@@ -2180,7 +2520,7 @@
     "Lyric": "Cut the diamond / Cut it like diamond"
   },
   {
-    "ID": 218,
+    "ID": 253,
     "Member": "All",
     "Filename": "all_01.mp3",
     "Song": "Girls Capitalism",
@@ -2190,7 +2530,7 @@
     "Lyric": "(Woo) La-la-la, la-la-la-la, la, heart / La-la-la, la-la-la, la, heart / La-la-la, la-la-la-la, la-la, la, heart"
   },
   {
-    "ID": 219,
+    "ID": 254,
     "Member": "Yubin",
     "Filename": "yubin_01.mp3",
     "Song": "Girls Capitalism",
@@ -2200,7 +2540,7 @@
     "Lyric": "I'm the key to my heart"
   },
   {
-    "ID": 220,
+    "ID": 255,
     "Member": "Xinyu",
     "Filename": "xinyu_01.mp3",
     "Song": "Girls Capitalism",
@@ -2210,7 +2550,7 @@
     "Lyric": "Love me better"
   },
   {
-    "ID": 221,
+    "ID": 256,
     "Member": "Seoyeon",
     "Filename": "seoyeon_01.mp3",
     "Song": "Girls Capitalism",
@@ -2220,7 +2560,7 @@
     "Lyric": "화면 속 가득 빛나는 너 / 끝없는 피드 물들어 간 내 맘까지"
   },
   {
-    "ID": 222,
+    "ID": 257,
     "Member": "Hyerin",
     "Filename": "hyerin_01.mp3",
     "Song": "Girls Capitalism",
@@ -2230,7 +2570,7 @@
     "Lyric": "이제는 알아, 행복은 말야, ayy / 니가 대신할 수 없잖아"
   },
   {
-    "ID": 223,
+    "ID": 258,
     "Member": "Dahyun",
     "Filename": "dahyun_01.mp3",
     "Song": "Girls Capitalism",
@@ -2240,7 +2580,7 @@
     "Lyric": "지금 내가 자신 있게 반짝일 수 있게 / 화려한 필터보다 자본주의 내 매력, oh, yeah (Oh, yeah)"
   },
   {
-    "ID": 224,
+    "ID": 259,
     "Member": "Xinyu",
     "Filename": "xinyu_02.mp3",
     "Song": "Girls Capitalism",
@@ -2250,7 +2590,7 @@
     "Lyric": "깨어났던 건 개념부터 현실적"
   },
   {
-    "ID": 225,
+    "ID": 260,
     "Member": "Kaede",
     "Filename": "kaede_01.mp3",
     "Song": "Girls Capitalism",
@@ -2260,7 +2600,7 @@
     "Lyric": "나를 향해 더 높은 내 꿈들을 아껴"
   },
   {
-    "ID": 226,
+    "ID": 261,
     "Member": "All",
     "Filename": "all_02.mp3",
     "Song": "Girls Capitalism",
@@ -2270,7 +2610,7 @@
     "Lyric": "Selfish (밥바답)"
   },
   {
-    "ID": 227,
+    "ID": 262,
     "Member": "Sohyun",
     "Filename": "sohyun_01.mp3",
     "Song": "Girls Capitalism",
@@ -2280,7 +2620,7 @@
     "Lyric": "누가 뭐라해도 내 기분이 젤 중요해"
   },
   {
-    "ID": 228,
+    "ID": 263,
     "Member": "All",
     "Filename": "all_03.mp3",
     "Song": "Girls Capitalism",
@@ -2290,7 +2630,7 @@
     "Lyric": "(밥바답)"
   },
   {
-    "ID": 229,
+    "ID": 264,
     "Member": "Sohyun",
     "Filename": "sohyun_02.mp3",
     "Song": "Girls Capitalism",
@@ -2300,7 +2640,7 @@
     "Lyric": "그럴려면 잔고도 충분히 account care"
   },
   {
-    "ID": 230,
+    "ID": 265,
     "Member": "All",
     "Filename": "all_04.mp3",
     "Song": "Girls Capitalism",
@@ -2310,7 +2650,7 @@
     "Lyric": "(밥바답)"
   },
   {
-    "ID": 231,
+    "ID": 266,
     "Member": "Kaede",
     "Filename": "kaede_02.mp3",
     "Song": "Girls Capitalism",
@@ -2320,7 +2660,7 @@
     "Lyric": "내 인생의 기준은 나, oh, I love myself"
   },
   {
-    "ID": 232,
+    "ID": 267,
     "Member": "Yubin",
     "Filename": "yubin_02.mp3",
     "Song": "Girls Capitalism",
@@ -2330,7 +2670,7 @@
     "Lyric": "나는 아름다워"
   },
   {
-    "ID": 233,
+    "ID": 268,
     "Member": "All",
     "Filename": "all_05.mp3",
     "Song": "Girls Capitalism",
@@ -2340,7 +2680,7 @@
     "Lyric": "(Call me beauty)"
   },
   {
-    "ID": 234,
+    "ID": 269,
     "Member": "Hyerin",
     "Filename": "hyerin_02.mp3",
     "Song": "Girls Capitalism",
@@ -2350,7 +2690,7 @@
     "Lyric": "귀여운 건 이제 지루해"
   },
   {
-    "ID": 235,
+    "ID": 270,
     "Member": "All",
     "Filename": "all_06.mp3",
     "Song": "Girls Capitalism",
@@ -2360,7 +2700,7 @@
     "Lyric": "(Call me beauty)"
   },
   {
-    "ID": 236,
+    "ID": 271,
     "Member": "Nien",
     "Filename": "nien_01.mp3",
     "Song": "Girls Capitalism",
@@ -2370,7 +2710,7 @@
     "Lyric": "예쁜 건 다 나의 소유"
   },
   {
-    "ID": 237,
+    "ID": 272,
     "Member": "All",
     "Filename": "all_07.mp3",
     "Song": "Girls Capitalism",
@@ -2380,7 +2720,7 @@
     "Lyric": "(Call me beauty)"
   },
   {
-    "ID": 238,
+    "ID": 273,
     "Member": "Seoyeon",
     "Filename": "seoyeon_02.mp3",
     "Song": "Girls Capitalism",
@@ -2390,7 +2730,7 @@
     "Lyric": "거울 속에 나를 더 사랑해 줄 거야"
   },
   {
-    "ID": 239,
+    "ID": 274,
     "Member": "Sohyun",
     "Filename": "sohyun_03.mp3",
     "Song": "Girls Capitalism",
@@ -2400,7 +2740,7 @@
     "Lyric": "난 아름다워, love me better"
   },
   {
-    "ID": 240,
+    "ID": 275,
     "Member": "All",
     "Filename": "all_08.mp3",
     "Song": "Girls Capitalism",
@@ -2410,7 +2750,7 @@
     "Lyric": "La-la-la, la-la-la-la, la, heart / La-la-la, la-la-la, la, heart / La-la-la, la-la-la-la, la-la, la, heart"
   },
   {
-    "ID": 241,
+    "ID": 276,
     "Member": "Dahyun",
     "Filename": "dahyun_02.mp3",
     "Song": "Girls Capitalism",
@@ -2420,7 +2760,7 @@
     "Lyric": "매일매일 커져가는 꿈속으로"
   },
   {
-    "ID": 242,
+    "ID": 277,
     "Member": "Yubin",
     "Filename": "yubin_03.mp3",
     "Song": "Girls Capitalism",
@@ -2430,7 +2770,7 @@
     "Lyric": "아득히 까마득하던 자유"
   },
   {
-    "ID": 243,
+    "ID": 278,
     "Member": "Hyerin",
     "Filename": "hyerin_03.mp3",
     "Song": "Girls Capitalism",
@@ -2440,7 +2780,7 @@
     "Lyric": "언제부턴가 다가온 현실"
   },
   {
-    "ID": 244,
+    "ID": 279,
     "Member": "Kaede",
     "Filename": "kaede_03.mp3",
     "Song": "Girls Capitalism",
@@ -2450,7 +2790,7 @@
     "Lyric": "나만을 위한 춤 / 눈 뜨고 꾸는 꿈 / Ooh, ha-ah-ah-ah, ah, ah"
   },
   {
-    "ID": 245,
+    "ID": 280,
     "Member": "Sohyun",
     "Filename": "sohyun_04.mp3",
     "Song": "Girls Capitalism",
@@ -2460,7 +2800,7 @@
     "Lyric": "내 앞에 / 좀 불안한 내일도"
   },
   {
-    "ID": 246,
+    "ID": 281,
     "Member": "Seoyeon",
     "Filename": "seoyeon_03.mp3",
     "Song": "Girls Capitalism",
@@ -2470,7 +2810,7 @@
     "Lyric": "더 기대돼 / 내가 만들어 갈 나"
   },
   {
-    "ID": 247,
+    "ID": 282,
     "Member": "Dahyun",
     "Filename": "dahyun_03.mp3",
     "Song": "Girls Capitalism",
@@ -2480,7 +2820,7 @@
     "Lyric": "흔한 흔들림 속에서도 / 내 삶의 기준은 나 / Oh I Love Myself"
   },
   {
-    "ID": 248,
+    "ID": 283,
     "Member": "Kaede",
     "Filename": "kaede_04.mp3",
     "Song": "Girls Capitalism",
@@ -2490,7 +2830,7 @@
     "Lyric": "나는 아름다워"
   },
   {
-    "ID": 249,
+    "ID": 284,
     "Member": "All",
     "Filename": "all_09.mp3",
     "Song": "Girls Capitalism",
@@ -2500,7 +2840,7 @@
     "Lyric": "Inner Beauty"
   },
   {
-    "ID": 250,
+    "ID": 285,
     "Member": "Nien",
     "Filename": "nien_02.mp3",
     "Song": "Girls Capitalism",
@@ -2510,7 +2850,7 @@
     "Lyric": "내 맘속에 나를 아낄래"
   },
   {
-    "ID": 251,
+    "ID": 286,
     "Member": "All",
     "Filename": "all_10.mp3",
     "Song": "Girls Capitalism",
@@ -2520,7 +2860,7 @@
     "Lyric": "Inner Beauty"
   },
   {
-    "ID": 252,
+    "ID": 287,
     "Member": "Yubin",
     "Filename": "yubin_04.mp3",
     "Song": "Girls Capitalism",
@@ -2530,7 +2870,7 @@
     "Lyric": "자신 있는 미적 태도"
   },
   {
-    "ID": 253,
+    "ID": 288,
     "Member": "All",
     "Filename": "all_11.mp3",
     "Song": "Girls Capitalism",
@@ -2540,7 +2880,7 @@
     "Lyric": "Inner Beauty"
   },
   {
-    "ID": 254,
+    "ID": 289,
     "Member": "Seoyeon",
     "Filename": "seoyeon_04.mp3",
     "Song": "Girls Capitalism",
@@ -2550,7 +2890,7 @@
     "Lyric": "누구보다 나를 더 사랑해 줄 거야"
   },
   {
-    "ID": 255,
+    "ID": 290,
     "Member": "Dahyun",
     "Filename": "dahyun_04.mp3",
     "Song": "Girls Capitalism",
@@ -2560,7 +2900,7 @@
     "Lyric": "난 아름다워 Love Me Better"
   },
   {
-    "ID": 256,
+    "ID": 291,
     "Member": "All",
     "Filename": "all_12.mp3",
     "Song": "Girls Capitalism",
@@ -2570,7 +2910,7 @@
     "Lyric": "La La La La La La Heart / La La La La La La Heart / La La La La La La Heart"
   },
   {
-    "ID": 257,
+    "ID": 292,
     "Member": "Hyerin",
     "Filename": "hyerin_04.mp3",
     "Song": "Girls Capitalism",
@@ -2580,7 +2920,7 @@
     "Lyric": "매일매일 커져가는 꿈속으로"
   },
   {
-    "ID": 258,
+    "ID": 293,
     "Member": "Kaede",
     "Filename": "kaede_05.mp3",
     "Song": "Girls Capitalism",
@@ -2590,7 +2930,7 @@
     "Lyric": "다양한 내 매력을 모아 / 채워 나갈 나의 시간들"
   },
   {
-    "ID": 259,
+    "ID": 294,
     "Member": "Sohyun",
     "Filename": "sohyun_05.mp3",
     "Song": "Girls Capitalism",
@@ -2600,7 +2940,7 @@
     "Lyric": "내 모든 모습들을 사랑해 줄래"
   },
   {
-    "ID": 260,
+    "ID": 295,
     "Member": "Xinyu",
     "Filename": "xinyu_03.mp3",
     "Song": "Girls Capitalism",
@@ -2610,7 +2950,7 @@
     "Lyric": "Yeah, You Call Me Beauty"
   },
   {
-    "ID": 261,
+    "ID": 296,
     "Member": "All",
     "Filename": "all_13.mp3",
     "Song": "Girls Capitalism",
@@ -2620,7 +2960,7 @@
     "Lyric": "Call Me Beauty"
   },
   {
-    "ID": 262,
+    "ID": 297,
     "Member": "Kaede",
     "Filename": "kaede_06.mp3",
     "Song": "Girls Capitalism",
@@ -2630,7 +2970,7 @@
     "Lyric": "귀여운 건 이제 지루해"
   },
   {
-    "ID": 263,
+    "ID": 298,
     "Member": "All",
     "Filename": "all_14.mp3",
     "Song": "Girls Capitalism",
@@ -2640,7 +2980,7 @@
     "Lyric": "Call Me Beauty"
   },
   {
-    "ID": 264,
+    "ID": 299,
     "Member": "Xinyu",
     "Filename": "xinyu_04.mp3",
     "Song": "Girls Capitalism",
@@ -2650,7 +2990,7 @@
     "Lyric": "예쁜 건 다 나의 소유"
   },
   {
-    "ID": 265,
+    "ID": 300,
     "Member": "All",
     "Filename": "all_15.mp3",
     "Song": "Girls Capitalism",
@@ -2660,7 +3000,7 @@
     "Lyric": "Call Me Beauty"
   },
   {
-    "ID": 266,
+    "ID": 301,
     "Member": "Dahyun",
     "Filename": "dahyun_05.mp3",
     "Song": "Girls Capitalism",
@@ -2670,7 +3010,7 @@
     "Lyric": "거울 속에 나를 더 사랑해 줄 거야"
   },
   {
-    "ID": 267,
+    "ID": 302,
     "Member": "Sohyun",
     "Filename": "sohyun_06.mp3",
     "Song": "Girls Capitalism",
@@ -2680,7 +3020,7 @@
     "Lyric": "난 아름다워 Love Me Better"
   },
   {
-    "ID": 268,
+    "ID": 303,
     "Member": "All",
     "Filename": "all_16.mp3",
     "Song": "Girls Capitalism",
@@ -2690,7 +3030,7 @@
     "Lyric": "La La La La La La Heart / La La La La La La Heart / La La La La La La Heart"
   },
   {
-    "ID": 269,
+    "ID": 304,
     "Member": "Seoyeon",
     "Filename": "seoyeon_05.mp3",
     "Song": "Girls Capitalism",
