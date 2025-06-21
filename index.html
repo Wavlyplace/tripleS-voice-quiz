@@ -150,7 +150,7 @@
 	  color: white;
 	}
 
-	/* ========== Guess Buttons ========== */
+	/* ========== Guess Buttons (Theme-Aware) ========== */
 	.buttons {
 	  display: flex;
 	  flex-wrap: wrap;
@@ -162,7 +162,7 @@
 	.guess-btn {
 	  width: 120px;
 	  height: 150px;
-	  background-color: var(--card-light);
+	  background-color: var(--card-light); /* Swaps in dark mode via media query */
 	  border-radius: 12px;
 	  border: 2px solid transparent;
 	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -177,7 +177,7 @@
 	.guess-btn:hover {
 	  transform: scale(1.05);
 	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	  border-color: var(--accent);
+	  border-color: var(--accent); /* From song theme */
 	}
 
 	.btn-content {
@@ -197,7 +197,13 @@
 
 	.btn-content span {
 	  font-size: 0.9rem;
-	  color: var(--text-light);
+	  color: inherit; /* Inherits from body or theme-set override */
+	  font-weight: bold;
+	  text-align: center;
+	}
+	
+	.guess-btn:hover img {
+	  box-shadow: 0 0 10px var(--accent);
 	}
 
 	/* ========== Feedback ========== */
@@ -817,6 +823,20 @@
 		});
 		
 	  updateLyricBox();
+	  
+	  const root = document.documentElement;
+	  const pagetheme = songThemes[currentClip.song];
+
+	  if (pagetheme) {
+	    document.body.style.background = pagetheme.background;
+	    root.style.setProperty('--accent', pagetheme.accent);
+	    document.body.style.color = pagetheme.textColor;
+	  } else {
+	    // Fallback
+	    document.body.style.background = "var(--bg-light)";
+	    root.style.setProperty('--accent', '#8c52ff');
+	    document.body.style.color = "var(--text-light)";
+	  }
 	}
 	
   function updateLyricBox() {
@@ -902,6 +922,34 @@
 		gradientFrom: "rgba(100, 140, 173, 1)",  // blue
 		gradientTo: "rgba(160, 207, 236, 0.5)",
 		shadowColor: "#94A8BC",
+	  }
+	};
+	
+	const songThemes = {
+	  "Are You Alive": {
+		background: "linear-gradient(135deg, #001f3f, #39CCCC)",
+		accent: "#39CCCC",
+		textColor: "#ffffff"
+	  },
+	  "Hit the Floor": {
+		background: "linear-gradient(135deg, #7F0000, #FF4136)",
+		accent: "#FF4136",
+		textColor: "#ffffff"
+	  },
+	  "Untitled": {
+		background: "linear-gradient(135deg, #1C1C1C, #A9A9A9)",
+		accent: "#A9A9A9",
+		textColor: "#ffffff"
+	  },
+	  "Girls Never Die": {
+		background: "linear-gradient(135deg, #0d0d0d, #336666)",
+		accent: "#00FFAA",
+		textColor: "#ffffff"
+	  },
+	  "Door": {
+		background: "linear-gradient(135deg, #ffe6f0, #ffc0cb)",
+		accent: "#ff66b2",
+		textColor: "#333333"
 	  }
 	};
 
