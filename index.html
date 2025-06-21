@@ -7,12 +7,17 @@
   <style>
 	:root {
 	  --accent: #8c52ff;
-	  --text-light: #333;
-	  --text-dark: #eee;
+	  --background: var(--bg-light);
+	  --text-color: var(--text-light);
+	  --card-bg: var(--card-light);
+
 	  --bg-light: #f5f5f5;
 	  --bg-dark: #121212;
 	  --card-light: #fff;
 	  --card-dark: #1e1e1e;
+	  --text-light: #333;
+	  --text-dark: #eee;
+
 	  --correct-bg-light: #d4edda;
 	  --correct-bg-dark: #295a37;
 	  --incorrect-bg-light: #f8d7da;
@@ -24,8 +29,8 @@
 	  font-family: 'Segoe UI', sans-serif;
 	  text-align: center;
 	  padding: 1.5rem;
-	  background-color: var(--bg-light);
-	  color: var(--text-light);
+	  background-color: var(--background);
+	  color: var(--text-color);
 	  transition: background-color 0.3s, color 0.3s;
 	}
 
@@ -162,7 +167,8 @@
 	.guess-btn {
 	  width: 120px;
 	  height: 150px;
-	  background-color: var(--card-light); /* Swaps in dark mode via media query */
+	  background: var(--card-bg);
+	  color: var(--text-color);
 	  border-radius: 12px;
 	  border: 2px solid transparent;
 	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -172,6 +178,8 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
+	  backdrop-filter: blur(8px);
+	  -webkit-backdrop-filter: blur(8px);
 	}
 
 	.guess-btn:hover {
@@ -241,15 +249,18 @@
 
 	/* ========== Lyric Box ========== */
 	.lyric-box {
-	  background: rgba(255, 255, 255, 0.07);
-	  border: 1px solid rgba(255, 255, 255, 0.15);
+	  background: var(--card-bg);
+	  border: 1px solid rgba(255, 255, 255, 0.1);
 	  border-radius: 12px;
 	  padding: 1rem 1.5rem;
-	  color: white;
+	  color: var(--text-color);
 	  font-size: 1.2rem;
 	  max-width: 90%;
 	  margin: 1rem auto 0 auto;
 	  text-align: center;
+	  backdrop-filter: blur(6px);
+	  -webkit-backdrop-filter: blur(6px);
+	  transition: background 0.3s ease, color 0.3s ease;
 	}
 
 	.lyric-line {
@@ -265,7 +276,8 @@
 	/* ========== Member Stats ========== */
 	#memberStats {
 	  margin-top: 2rem;
-	  background: var(--card-light);
+	  background: var(--card-bg);
+	  color: var(--text-color);
 	  padding: 1rem;
 	  border-radius: 12px;
 	  display: inline-block;
@@ -278,63 +290,47 @@
 	  from { opacity: 0; transform: translate(-50%, -60%); }
 	  to   { opacity: 1; transform: translate(-50%, -50%); }
 	}
+
 	@keyframes feedbackOut {
 	  from { opacity: 1; transform: translate(-50%, -50%); }
 	  to   { opacity: 0; transform: translate(-50%, -40%); }
 	}
+
 	@keyframes bounce {
 	  0%, 100% { transform: scale(1); }
 	  50% { transform: scale(1.15); }
 	}
+
 	@keyframes shake {
-	  0%, 100% { transform: translateX(0); }
-	  25%, 75% { transform: translateX(-6px); }
+	  0% { transform: translateX(0); }
+	  25% { transform: translateX(-6px); }
 	  50% { transform: translateX(6px); }
+	  75% { transform: translateX(-6px); }
+	  100% { transform: translateX(0); }
 	}
+
+	/* Subtle pulsing glow for correct button border */
 	@keyframes pulse-border {
-	  0% { border-width: 4px; transform: scale(1.05); }
-	  100% { border-width: 2px; transform: scale(1); }
+	  0%, 100% { box-shadow: 0 0 8px 2px rgba(140, 82, 255, 0.6); }
+	  50% { box-shadow: 0 0 12px 4px rgba(140, 82, 255, 0.9); }
 	}
 
 	/* Correct & Incorrect Button Feedback */
-	.correct-flash img {
+
+	.correct-flash-btn {
 	  animation: bounce 0.3s ease-in-out;
-	  box-shadow: 0 0 8px 2px limegreen;
+	  box-shadow: 0 0 10px 4px rgba(140, 82, 255, 0.7); /* soft purple glow */
+	  border-radius: 0.75rem;
+	  transition: box-shadow 0.3s ease;
 	}
+
 	.correct-button {
-	  animation: pulse-border 0.4s ease;
+	  animation: pulse-border 1.2s ease infinite;
+	  border-color: rgba(140, 82, 255, 0.8);
 	}
+
 	.incorrect-shake {
 	  animation: shake 0.4s ease-in-out;
-	}
-
-	/* ========== Dark Mode ========== */
-	@media (prefers-color-scheme: dark) {
-	  body {
-		background-color: var(--bg-dark);
-		color: var(--text-dark);
-	  }
-
-	  .guess-btn {
-		background-color: var(--card-dark);
-	  }
-
-	  .btn-content span,
-	  #resetButton,
-	  #memberStats {
-		color: var(--text-dark);
-		background-color: var(--card-dark);
-	  }
-
-	  #feedback.correct {
-		background-color: var(--correct-bg-dark);
-		color: #c2f0c2;
-	  }
-
-	  #feedback.incorrect {
-		background-color: var(--incorrect-bg-dark);
-		color: #ffd6d6;
-	  }
 	}
 
 	/* ========== Mobile Responsiveness ========== */
@@ -364,7 +360,7 @@
 	}
 	
 	.glass-card {
-	  background: rgba(255, 255, 255, 0.1);
+	  background: var(--card-bg);
 	  border: 1px solid rgba(255, 255, 255, 0.2);
 	  border-radius: 16px;
 	  padding: 2rem;
@@ -374,13 +370,6 @@
 	  -webkit-backdrop-filter: blur(10px);
 	  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	  transition: background 0.3s ease;
-	}
-
-	@media (prefers-color-scheme: dark) {
-	  .glass-card {
-		background: rgba(30, 30, 30, 0.6);
-		border-color: rgba(255, 255, 255, 0.1);
-	  }
 	}
 </style>
 </head>
@@ -531,7 +520,7 @@
 
       const btn = document.createElement('button');
       btn.className = 'guess-btn';
-      btn.onclick = () => guess(member);
+      btn.onclick = () => guess(btn);
       btn.style.borderColor = memberColors[member];
       btn.dataset.name = member;
 
@@ -752,91 +741,84 @@
   document.getElementById('lyricModeCheckbox').addEventListener('change', updateLyricBox);
 
   function loadNextClip() {
-	  const selectedMembers = getSelectedMembers();
-	  const selectedSong = document.getElementById('songDropdown').value;
+		const selectedMembers = getSelectedMembers();
+		const selectedSong = document.getElementById('songDropdown').value;
+		const isAllSongs = selectedSong === 'All Songs';
+		const songKey = isAllSongs ? 'All Songs' : selectedSong;
 
-	  const inkigayoTheme = {
-		background: '#000000',
-		gradientFrom: 'rgba(255, 255, 255, 1)',
-		gradientTo: 'rgba(255, 255, 255, 0.1)',
-		shadowColor: 'white'
-	  };
+		const inkigayoTheme = {
+			background: '#000000',
+			gradientFrom: 'rgba(255, 255, 255, 1)',
+			gradientTo: 'rgba(255, 255, 255, 0.1)',
+			shadowColor: 'white'
+		};
 
-	  let filteredClips = clips.filter(clip => {
-		const matchesSong = selectedSong === 'All Songs' || clip.song === selectedSong;
-		const matchesMember = selectedMembers.includes(clip.member);
-		return matchesSong && matchesMember;
-	  });
+		const filteredClips = clips.filter(clip => {
+			const matchesSong = isAllSongs || clip.song === selectedSong;
+			const matchesMember = selectedMembers.includes(clip.member);
+			return matchesSong && matchesMember;
+		});
 
-	  if (filteredClips.length === 0) {
-		if (!isFirstLoad && !suppressNextLoadClipAlert) {
-		  alert('No clips match this selection!');
+		if (filteredClips.length === 0) {
+			if (!isFirstLoad && !suppressNextLoadClipAlert) {
+				alert('No clips match this selection!');
+			}
+			suppressNextLoadClipAlert = false;
+			return;
 		}
+
 		suppressNextLoadClipAlert = false;
-		return;
-	  }
+		isFirstLoad = false;
 
-	  suppressNextLoadClipAlert = false;
-	  isFirstLoad = false;
-
-	  // 🎯 Sequential Mode logic
-		if (isSequentialMode() && selectedSong !== 'All Songs') {
+		// 🎯 Sequential Mode
+		if (isSequentialMode() && !isAllSongs) {
 			filteredClips.sort((a, b) => a.ID - b.ID);
-
 			if (sequentialIndex >= filteredClips.length) {
 				alert("You've reached the end of the clips for this song! Starting over.");
 				sequentialIndex = 0;
 			}
-
 			currentClip = filteredClips[sequentialIndex];
 			sequentialIndex++;
 		} else {
-			// Non-sequential mode: pick random clip
 			currentClip = filteredClips[Math.floor(Math.random() * filteredClips.length)];
 		}
 
-	  const folder = formatSongFolderName(currentClip.song);
-	  const audioPlayer = document.getElementById('audioPlayer');
-	  
-	  audioPlayer.addEventListener('play', () => {
-		  updatePlayPauseIcon(true);  // true = is playing
-		});
+		// 🔈 Set Audio
+		const folder = formatSongFolderName(currentClip.song);
+		const audioPlayer = document.getElementById('audioPlayer');
+		audioPlayer.src = `audio/${folder}/${currentClip.filename}`;
 
-	  audioPlayer.addEventListener('pause', () => {
-		  updatePlayPauseIcon(false); // false = is paused
-		});
-	  audioPlayer.src = `audio/${folder}/${currentClip.filename}`;
+		audioPlayer.addEventListener('play', () => updatePlayPauseIcon(true));
+		audioPlayer.addEventListener('pause', () => updatePlayPauseIcon(false));
+		audioPlayer.addEventListener('ended', () => updatePlayPauseIcon(false));
 
-	  const theme = selectedSong === 'All Songs'
-		? inkigayoTheme
-		: (visualizerThemes[currentClip.song] || inkigayoTheme);
+		// 🌈 THEME SETUP
+		const theme = visualizerThemes[songKey] || inkigayoTheme;
+		const pageTheme = songThemes[songKey];
 
-	  audioPlayer.addEventListener('ended', () => {
-		updatePlayPauseIcon(false);
-	  });
+		setupCanvasVisualizer(audioPlayer, theme);
+		audioPlayer.load();
+		audioPlayer.play().catch(e => console.log('Autoplay failed:', e));
 
-	  setupCanvasVisualizer(audioPlayer, theme);
-	  audioPlayer.load();
-	  audioPlayer.play().catch(e => {
-		  // Optional: console log or silent fallback
-		  console.log('Autoplay failed:', e);
-		});
-		
-	  updateLyricBox();
-	  
-	  const root = document.documentElement;
-	  const pagetheme = songThemes[currentClip.song];
+		updateLyricBox();
 
-	  if (pagetheme) {
-	    document.body.style.background = pagetheme.background;
-	    root.style.setProperty('--accent', pagetheme.accent);
-	    document.body.style.color = pagetheme.textColor;
-	  } else {
-	    // Fallback
-	    document.body.style.background = "var(--bg-light)";
-	    root.style.setProperty('--accent', '#8c52ff');
-	    document.body.style.color = "var(--text-light)";
-	  }
+		const root = document.documentElement;
+
+		if (pageTheme) {
+			document.body.style.background = `${pageTheme.backgroundGradient}, ${pageTheme.background}`;
+			document.body.style.color = pageTheme.textColor;
+
+			root.style.setProperty('--accent', pageTheme.accent || '#8c52ff');
+			root.style.setProperty('--text-color', pageTheme.textColor || '#222');
+			root.style.setProperty('--card-bg', pageTheme.cardBg || 'rgba(255, 255, 255, 0.4)');
+		} else {
+			// Fallback theme
+			document.body.style.background = 'var(--bg-light)';
+			document.body.style.color = 'var(--text-light)';
+			root.style.setProperty('--accent', '#8c52ff');
+			root.style.setProperty('--text-color', 'var(--text-light)');
+			root.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.4)');
+		}
 	}
 	
   function updateLyricBox() {
@@ -870,16 +852,16 @@
 
   const visualizerThemes = {
 	  "Are You Alive": {
-		background: "#021222",
-		gradientFrom: "rgba(38, 79, 114, 1)",  // teal-ish highlight
-		gradientTo: "rgba(38, 79, 114, 0.1)",
-		shadowColor: "#264f72",
+		background: "#0b1d2a",  // dark navy with green undertones
+		gradientFrom: "rgba(0, 204, 204, 1)",  // teal highlight
+		gradientTo: "rgba(0, 204, 204, 0.1)",
+		shadowColor: "#00cccc"
 	  },
 	  "Hit the Floor": {
-		background: "#1a0000",
-		gradientFrom: "rgba(255, 50, 50, 1)",  // aggressive red
-		gradientTo: "rgba(255, 50, 50, 0.1)",
-		shadowColor: "#ff3232",
+		background: "#2a0000",  // rich black-red
+		gradientFrom: "rgba(255, 70, 70, 1)",  // punchy red
+		gradientTo: "rgba(255, 70, 70, 0.1)",
+		shadowColor: "#ff4444"
 	  },
 	  "Untitled": {
 		background: "#1a1410",  // muted earthy brown
@@ -888,68 +870,115 @@
 		shadowColor: "#c78638",
 	  },
 	  "Inner Dance": {
-		background: "#aa3971",  // soft blush
-		gradientFrom: "rgba(233, 223, 239, 1)",  // deep pink
-		gradientTo: "rgba(233, 223, 239, 0.1)",
-		shadowColor: "#da9dc0",
+		background: "#6b003b",  // plum pink
+		gradientFrom: "rgba(255, 192, 203, 1)",  // soft pink
+		gradientTo: "rgba(255, 192, 203, 0.1)",
+		shadowColor: "#ffc0cb"
 	  },
 	  "Girls Never Die": {
-		background: '#000000',
-		gradientFrom: 'rgba(255, 255, 255, 1)',
-		gradientTo: 'rgba(255, 255, 255, 0.1)',
-		shadowColor: 'white'
+		background: "#0f0f0f",  // blackest black
+		gradientFrom: "rgba(255, 255, 255, 0.6)",  // silver glow
+		gradientTo: "rgba(255, 255, 255, 0.1)",
+		shadowColor: "#ffffff"
 	  },
 	  "Door": {
-		background: "#fff0f5",  // soft blush
-		gradientFrom: "rgba(255, 182, 193, 1)",  // cherry blossom pink
+		background: "#fff4f6",  // very soft pink
+		gradientFrom: "rgba(255, 182, 193, 1)",  // cherry blossom
 		gradientTo: "rgba(255, 182, 193, 0.1)",
-		shadowColor: "#ffb6c1",
+		shadowColor: "#ffb6c1"
 	  },
 	  "Just Do It": {
-		background: "#001d3b",  // dark blue
-		gradientFrom: "rgba(107, 164, 194, 1)",  
-		gradientTo: "rgba(107, 164, 194, 0.1)",
-		shadowColor: "#207ca8",
+		background: "#001a33",  // deep navy
+		gradientFrom: "rgba(80, 160, 220, 1)",  // icy blue
+		gradientTo: "rgba(80, 160, 220, 0.1)",
+		shadowColor: "#50a0dc"
 	  },
 	  "Invincible": {
-		background: "#0B0C0D",  // almost black
-		gradientFrom: "rgba(176, 213, 217, 1)",  // light blue
-		gradientTo: "rgba(3, 103, 166, 0.1)",
-		shadowColor: "#0367A6",
+		background: "#0d1117",  // dark slate
+		gradientFrom: "rgba(100, 200, 255, 1)",  // electric sky blue
+		gradientTo: "rgba(100, 200, 255, 0.1)",
+		shadowColor: "#64c8ff"
 	  },
 	  "Girls Capitalism": {
-		background: "#D1DAE7",  // very light blue
-		gradientFrom: "rgba(100, 140, 173, 1)",  // blue
-		gradientTo: "rgba(160, 207, 236, 0.5)",
-		shadowColor: "#94A8BC",
+		background: "#e9f2fa",  // gentle baby blue
+		gradientFrom: "rgba(150, 200, 255, 1)",  // pastel sky
+		gradientTo: "rgba(150, 200, 255, 0.1)",
+		shadowColor: "#a8c8f0"
 	  }
 	};
 	
 	const songThemes = {
 	  "Are You Alive": {
-		background: "linear-gradient(135deg, #001f3f, #39CCCC)",
-		accent: "#39CCCC",
-		textColor: "#ffffff"
+		accent: "#3FA9F5",
+		textColor: "#E3F2FD",
+		background: "#0B1C2C",
+		backgroundGradient: "linear-gradient(135deg, #0E3D59, #155E75)",
+		cardBg: "rgba(16, 32, 48, 0.5)",
 	  },
 	  "Hit the Floor": {
-		background: "linear-gradient(135deg, #7F0000, #FF4136)",
-		accent: "#FF4136",
-		textColor: "#ffffff"
+		accent: "#FF4B4B",
+		textColor: "#FFECEC",
+		background: "#1A0000",
+		backgroundGradient: "linear-gradient(135deg, #6E0B0B, #1A0000)",
+		cardBg: "rgba(40, 0, 0, 0.5)",
 	  },
 	  "Untitled": {
-		background: "linear-gradient(135deg, #1C1C1C, #A9A9A9)",
-		accent: "#A9A9A9",
-		textColor: "#ffffff"
+		accent: "#B57A5A",
+		textColor: "#FAF3EB",
+		background: "#1F1612",
+		backgroundGradient: "linear-gradient(135deg, #5A3A2E, #2E1D14)",
+		cardBg: "rgba(60, 45, 35, 0.45)",
+	  },
+	  "Inner Dance": {
+		accent: "#F6A5C0",
+		textColor: "#FFF0F5",
+		background: "#91426C",
+		backgroundGradient: "linear-gradient(135deg, #F9A8D4, #91426C)",
+		cardBg: "rgba(255, 192, 203, 0.15)",
 	  },
 	  "Girls Never Die": {
-		background: "linear-gradient(135deg, #0d0d0d, #336666)",
-		accent: "#00FFAA",
-		textColor: "#ffffff"
+		accent: "#FFFFFF",
+		textColor: "#FFFFFF",
+		background: "#000000",
+		backgroundGradient: "linear-gradient(135deg, #333333, #000000)",
+		cardBg: "rgba(255, 255, 255, 0.05)",
 	  },
 	  "Door": {
-		background: "linear-gradient(135deg, #ffe6f0, #ffc0cb)",
-		accent: "#ff66b2",
-		textColor: "#333333"
+		accent: "#FFB6C1",
+		textColor: "#4A2A2A",
+		background: "#FFF0F5",
+		backgroundGradient: "linear-gradient(135deg, #FFD1DC, #FFF0F5)",
+		cardBg: "rgba(255, 182, 193, 0.2)",
+	  },
+	  "Just Do It": {
+		accent: "#1E88E5",
+		textColor: "#DDEEFF",
+		background: "#0D1F3F",
+		backgroundGradient: "linear-gradient(135deg, #1E88E5, #0D1F3F)",
+		cardBg: "rgba(13, 31, 63, 0.45)",
+	  },
+	  "Invincible": {
+		accent: "#A1D7EF",
+		textColor: "#E1F5FE",
+		background: "#0C1114",
+		backgroundGradient: "linear-gradient(135deg, #0C1114, #3A9ED9)",
+		cardBg: "rgba(10, 30, 45, 0.4)",
+	  },
+	  "Girls Capitalism": {
+		accent: "#6C92B5",
+		textColor: "#1B1B1B",
+		background: "#D1DAE7",
+		backgroundGradient: "linear-gradient(135deg, #B2C9E3, #D1DAE7)",
+		cardBg: "rgba(220, 230, 240, 0.3)",
+	  },
+
+	  // 🎤 "All Songs" Theme (Inkigayo style)
+	  "All Songs": {
+		accent: "#FFFFFF",
+		textColor: "#FFFFFF",
+		background: "#000000",
+		backgroundGradient: "linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))",
+		cardBg: "rgba(255, 255, 255, 0.05)",
 	  }
 	};
 
@@ -1025,45 +1054,43 @@
 	  }
 	}
 
-  function guess(member) {
-    attempts++;
-    memberStats[currentClip.member].appearances++;
+  function guess(button) {
+	  const selectedMember = button.dataset.name;
+	  const isCorrect = selectedMember === currentClip.member;
+	  attempts++;
+	  memberStats[currentClip.member].appearances++;
 
-    const isCorrect = member === currentClip.member;
-    const buttons = document.querySelectorAll('.guess-btn');
+	  if (isCorrect) {
+		score++;
+		streak++;
+		memberStats[selectedMember].correctGuesses++;
 
-    buttons.forEach(button => {
-      const selectedName = button.dataset.name;
-      if (selectedName === member) {
-		  if (isCorrect) {
-			button.classList.add("correct-button");
-		  } else {
-			button.classList.add("incorrect-shake");
-		  }
-		  setTimeout(() => {
-			button.classList.remove("correct-button", "incorrect-shake");
-		  }, 400);
+		button.classList.add('correct-button');
+		const img = button.querySelector('img');
+		if (img) img.classList.add('correct-flash-btn');
+
+		setTimeout(() => {
+		  button.classList.remove('correct-button');
+		  if (img) img.classList.remove('correct-flash-btn');
+		}, 1000);
+
+		if (score > highScore) {
+		  highScore = score;
+		  localStorage.setItem('highScore', highScore);
 		}
-    });
+	  } else {
+		streak = 0;
+		button.classList.add('incorrect-shake');
+		setTimeout(() => {
+		  button.classList.remove('incorrect-shake');
+		}, 400);
+	  }
 
-    if (isCorrect) {
-      score++;
-      streak++;
-      memberStats[member].correctGuesses++;
-      animateCorrect();
-      if (score > highScore) {
-        highScore = score;
-        localStorage.setItem('highScore', highScore);
-      }
-    } else {
-      streak = 0;
-    }
-
-    showFeedback(
-      isCorrect ? '✅ Correct!' : `❌ Nope! It was ${currentClip.member}.`,
-      isCorrect
-    );
-  }
+	  showFeedback(
+		isCorrect ? '✅ Correct!' : `❌ Nope! It was ${currentClip.member}.`,
+		isCorrect
+	  );
+	}
 
 	function updateStats() {
 	  const accuracy = attempts === 0 ? 0 : ((score / attempts) * 100).toFixed(1);
@@ -1109,14 +1136,6 @@
     renderMemberStats();
   }
 
-	function animateCorrect() {
-	  document.body.classList.add('correct-flash');
-	  setTimeout(() => {
-		document.body.classList.remove('correct-flash');
-	  }, 300);
-	}
-
-
   function showFeedback(message, isCorrect) {
     const feedback = document.getElementById('feedback');
     feedback.textContent = message;
@@ -1149,6 +1168,23 @@
 	  }
 
 	  requestAnimationFrame(update);
+	}
+	
+	function markButtonCorrect(button) {
+	  button.classList.add('correct-button');
+	  button.querySelector('img')?.classList.add('correct-flash');
+	  // Remove classes after animation ends
+	  setTimeout(() => {
+		button.classList.remove('correct-button');
+		button.querySelector('img')?.classList.remove('correct-flash');
+	  }, 1200); // Matches pulse-border duration
+	}
+
+	function markButtonIncorrect(button) {
+	  button.classList.add('incorrect-shake');
+	  setTimeout(() => {
+		button.classList.remove('incorrect-shake');
+	  }, 400); // Matches shake duration
 	}
 	
 	playBtn.addEventListener('click', async () => {
