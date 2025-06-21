@@ -5,349 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>tripleS Voice Quiz</title>
   <style>
-  :root {
-    --accent: #8c52ff;
-    --text-light: #333;
-    --text-dark: #eee;
-    --bg-light: #f5f5f5;
-    --bg-dark: #121212;
-    --card-light: #ffffff;
-    --card-dark: #1e1e1e;
-    --correct-bg-light: #d4edda;
-    --correct-bg-dark: #295a37;
-    --incorrect-bg-light: #f8d7da;
-    --incorrect-bg-dark: #7a2a2a;
-  }
-
-  body {
-    font-family: sans-serif;
-    text-align: center;
-    padding: 2rem;
-    background-color: var(--bg-light);
-    color: var(--text-light);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  audio {
-    margin: 1rem 0;
-  }
-
-  .score-container {
-    font-size: 1.2rem;
-    margin: 1rem 0;
-  }
-
-  #resetButton {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: var(--card-light);
-    color: var(--text-light);
-    border: 2px solid var(--accent);
-    border-radius: 0.5rem;
-    transition: background 0.2s ease, color 0.2s ease;
-  }
-
-  #resetButton:hover {
-    background-color: var(--accent);
-    color: white;
-  }
-
-  .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
-  .guess-btn {
-    width: 120px;
-    height: 150px;
-    padding: 10px;
-    border-radius: 1rem;
-    border: 2px solid transparent;
-    background-color: var(--card-light);
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .guess-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border-color: var(--accent);
-  }
-
-  .btn-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .btn-content img {
-    width: 100px;
-    height: 100px;
-    border-radius: 0.75rem;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
-  }
-
-  .btn-content span {
-    font-size: 0.9rem;
-    text-align: center;
-    color: var(--text-light);
-    font-weight: bold;
-  }
-
-	.correct-flash img {
-	  animation: bounce 0.3s ease-in-out;
-	  box-shadow: 0 0 8px 2px limegreen;
-	  border-radius: 0.75rem;
+	:root {
+	  --accent: #8c52ff;
+	  --text-light: #333;
+	  --text-dark: #eee;
+	  --bg-light: #f5f5f5;
+	  --bg-dark: #121212;
+	  --card-light: #fff;
+	  --card-dark: #1e1e1e;
+	  --correct-bg-light: #d4edda;
+	  --correct-bg-dark: #295a37;
+	  --incorrect-bg-light: #f8d7da;
+	  --incorrect-bg-dark: #7a2a2a;
 	}
 
-  @keyframes flash-outline {
-    0% {
-      outline-color: limegreen;
-    }
-    100% {
-      outline-color: transparent;
-    }
-  }
-
-  #feedback {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1.5rem 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  #feedback.correct {
-    background-color: var(--correct-bg-light);
-    color: #155724;
-  }
-
-  #feedback.incorrect {
-    background-color: var(--incorrect-bg-light);
-    color: #721c24;
-  }
-
-  #feedback.show {
-    opacity: 1;
-  }
-
-  #modeSelector label {
-    margin-right: 1rem;
-    font-weight: bold;
-  }
-
-  #biasSelector label {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-  }
-
-  #memberStats {
-    margin-top: 1rem;
-    background: var(--card-light);
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    display: inline-block;
-    text-align: left;
-  }
-
-  #memberStats ul {
-    padding-left: 1.2rem;
-    list-style-type: disc;
-  }
-
-  #scoreDisplay,
-  #streakDisplay,
-  #highScoreDisplay {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-  }
-
-  /* 🌙 Dark Mode */
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    #resetButton {
-      background-color: var(--card-dark);
-      color: var(--text-dark);
-    }
-
-    .guess-btn {
-      background-color: var(--card-dark);
-      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
-    }
-
-    .btn-content span {
-      color: var(--text-dark);
-    }
-
-    #memberStats {
-      background: var(--card-dark);
-      color: var(--text-dark);
-    }
-
-    #feedback.correct {
-      background-color: var(--correct-bg-dark);
-      color: #c2f0c2;
-    }
-
-    #feedback.incorrect {
-      background-color: var(--incorrect-bg-dark);
-      color: #ffd6d6;
-    }
-	
-	@keyframes bounce {
-	  0%, 100% { transform: scale(1); }
-	  50% { transform: scale(1.15); }
+	/* ========== Base Layout ========== */
+	body {
+	  font-family: 'Segoe UI', sans-serif;
+	  text-align: center;
+	  padding: 1.5rem;
+	  background-color: var(--bg-light);
+	  color: var(--text-light);
+	  transition: background-color 0.3s, color 0.3s;
 	}
 
-	;.correct-flash {
-	;  animation: bounce 0.3s ease-in-out;
-	;}
-	
-	/* Button highlight */
-	.correct-button {
-	  animation: pulse-border 0.4s ease;
+	h1 {
+	  font-size: 2rem;
+	  margin-bottom: 1.5rem;
 	}
 
-	@keyframes pulse-border {
-	  0% { border-width: 4px; transform: scale(1.05); }
-	  100% { border-width: 2px; transform: scale(1); }
+	label {
+	  margin-right: 0.5rem;
+	  font-weight: 600;
 	}
 
-	@keyframes shake {
-	  0% { transform: translateX(0); }
-	  25% { transform: translateX(-6px); }
-	  50% { transform: translateX(6px); }
-	  75% { transform: translateX(-6px); }
-	  100% { transform: translateX(0); }
+	select, button, input[type="checkbox"], input[type="radio"] {
+	  font-size: 1rem;
+	  margin-top: 0.5rem;
+	  margin-bottom: 1rem;
 	}
 
-	.incorrect-shake {
-	  animation: shake 0.4s ease-in-out;
-	}
-	
-	@keyframes feedbackIn {
-	  from {
-		opacity: 0;
-		transform: translate(-50%, -60%);
-	  }
-	  to {
-		opacity: 1;
-		transform: translate(-50%, -50%);
-	  }
+	.hidden {
+	  display: none !important;
 	}
 
-	@keyframes feedbackOut {
-	  from {
-		opacity: 1;
-		transform: translate(-50%, -50%);
-	  }
-	  to {
-		opacity: 0;
-		transform: translate(-50%, -40%);
-	  }
-	}
-
-	#feedback.show {
-	  animation: feedbackIn 0.3s ease forwards;
-	}
-	#feedback:not(.show) {
-	  animation: feedbackOut 0.3s ease forwards;
-	}
-	
+	/* ========== Selectors & Controls ========== */
 	#songSelector {
-		margin-bottom: 1rem;
-		font-family: 'Arial', sans-serif;
-	}
-
-	#songSelector label {
-		font-weight: bold;
-		margin-right: 0.5rem;
+	  margin-bottom: 1rem;
 	}
 
 	#songDropdown {
-		padding: 0.3rem 0.6rem;
-		border-radius: 6px;
-		font-size: 1rem;
+	  padding: 0.4rem 0.8rem;
+	  border-radius: 6px;
+	  border: 1px solid #ccc;
 	}
-	
+
+	#sequentialModeWrapper {
+	  margin-top: 0.5rem;
+	}
+
+	/* ========== Bias Selector ========== */
 	#biasSelector {
 	  opacity: 0;
 	  max-height: 0;
 	  overflow: hidden;
-	  transition: opacity 0.3s ease, max-height 0.3s ease;
+	  transition: opacity 0.3s, max-height 0.3s;
+	  margin-top: 1rem;
 	}
-
 	#biasSelector.show {
 	  opacity: 1;
-	  max-height: 500px; /* large enough to fit content */
-	}
-	
-	h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-	
-    label {
-      margin-right: 0.5rem;
-    }
-	
-    select, button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-    }
-	
-    .custom-audio-controls {
-	  display: flex;
-	  justify-content: center; /* center horizontally */
-	  align-items: center;
-	  margin: 1rem 0;
+	  max-height: 500px;
 	}
 
-    .hidden {
-      display: none;
-    }
-	
-    .score-container {
-      margin-top: 2rem;
-    }
-	
-    .buttons {
-      margin-top: 1.5rem;
-    }
-	
-    #feedback {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-	
+	#biasSelector label {
+	  display: inline-block;
+	  margin: 0.3rem;
+	}
+
+	/* ========== Audio Controls & Visualizer ========== */
+	.custom-audio-controls {
+	  display: flex;
+	  justify-content: center;
+	  margin: 1.5rem 0;
+	}
+
 	.audio-button {
 	  width: 64px;
 	  height: 64px;
@@ -357,12 +98,11 @@
 	  display: flex;
 	  align-items: center;
 	  justify-content: center;
-	  transition: background-color 0.3s ease;
 	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	  border: none;
 	  cursor: pointer;
+	  transition: background-color 0.3s;
 	}
-
 	.audio-button:hover {
 	  background-color: #333;
 	}
@@ -372,103 +112,343 @@
 	  height: 24px;
 	  fill: currentColor;
 	}
-	
+
 	#visualizer {
-	  display: block;
 	  width: 100%;
 	  max-width: 100%;
 	  height: 150px;
-	  background-color: #000; /* pure black background */
+	  background-color: #000;
 	  border-radius: 8px;
-	  box-shadow:
-		0 0 10px #ffffff, /* subtle white-yellow glow */
-		inset 0 0 15px #666; /* inner shadow for depth */
-	  margin-top: 1rem;
+	  box-shadow: 0 0 10px white, inset 0 0 15px #666;
 	}
-	
-	.lyric-box {
-	  background: rgba(255, 255, 255, 0.05);
-	  border: 1px solid rgba(255, 255, 255, 0.2);
-	  padding: 1rem 1.5rem;
-	  margin-top: 1rem;
+
+	/* ========== Score & Stats Display ========== */
+	.score-container {
+	  font-size: 1.1rem;
+	  margin-top: 2rem;
+	}
+
+	#scoreDisplay,
+	#streakDisplay,
+	#highScoreDisplay {
+	  margin: 0.4rem 0;
+	}
+
+	#resetButton {
+	  margin-top: 0.75rem;
+	  padding: 0.5rem 1.2rem;
+	  font-size: 1rem;
+	  border: 2px solid var(--accent);
+	  border-radius: 8px;
+	  background-color: var(--card-light);
+	  color: var(--text-light);
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+	}
+	#resetButton:hover {
+	  background-color: var(--accent);
+	  color: white;
+	}
+
+	/* ========== Guess Buttons ========== */
+	.buttons {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  gap: 1rem;
+	  margin-top: 2rem;
+	}
+
+	.guess-btn {
+	  width: 140px;
+	  height: 170px;
+	  padding: 0.75rem;
+	  border-radius: 1rem;
+	  background: var(--card-light);
+	  border: 2px solid transparent;
+	  box-shadow:
+		0 4px 6px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.06);
+	  transition:
+		transform 0.2s ease,
+		box-shadow 0.3s ease,
+		border-color 0.3s ease;
+	  cursor: pointer;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  overflow: hidden;
+	}
+
+	.guess-btn:hover {
+	  transform: translateY(-4px) scale(1.03);
+	  box-shadow:
+		0 6px 10px rgba(0, 0, 0, 0.15),
+		0 2px 5px rgba(0, 0, 0, 0.08);
+	  border-color: var(--accent);
+	}
+
+	.btn-content {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+
+	.btn-content img {
+	  width: 96px;
+	  height: 96px;
+	  border-radius: 0.75rem;
+	  object-fit: cover;
+	  margin-bottom: 0.5rem;
+	  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+	  transition: transform 0.2s ease;
+	}
+
+	.btn-content span {
+	  font-size: 0.9rem;
+	  font-weight: 600;
+	  color: var(--text-light);
+	  text-align: center;
+	  transition: color 0.3s ease;
+	}
+
+	.guess-btn:hover .btn-content img {
+	  transform: scale(1.05);
+	}
+
+	/* ========== Feedback ========== */
+	#feedback {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  font-size: 1.5rem;
+	  font-weight: bold;
+	  padding: 1.2rem 2rem;
 	  border-radius: 12px;
+	  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+	  opacity: 0;
+	  pointer-events: none;
+	  z-index: 1000;
+	  transition: opacity 0.3s ease;
+	}
+
+	#feedback.correct {
+	  background-color: var(--correct-bg-light);
+	  color: #155724;
+	}
+	#feedback.incorrect {
+	  background-color: var(--incorrect-bg-light);
+	  color: #721c24;
+	}
+
+	#feedback.show {
+	  animation: feedbackIn 0.3s ease forwards;
+	}
+	#feedback:not(.show) {
+	  animation: feedbackOut 0.3s ease forwards;
+	}
+
+	/* ========== Lyric Box ========== */
+	.lyric-box {
+	  background: rgba(255, 255, 255, 0.07);
+	  border: 1px solid rgba(255, 255, 255, 0.15);
+	  border-radius: 12px;
+	  padding: 1rem 1.5rem;
 	  color: white;
 	  font-size: 1.2rem;
-	  text-align: center;
 	  max-width: 90%;
-	  margin-left: auto;
-	  margin-right: auto;
-	  transition: opacity 0.3s ease;
+	  margin: 1rem auto 0 auto;
+	  text-align: center;
 	}
 
 	.lyric-line {
 	  opacity: 0;
-	  transition: opacity 0.4s ease, transform 0.4s ease;
 	  transform: translateY(10px);
+	  transition: opacity 0.4s ease, transform 0.4s ease;
 	}
-
 	.lyric-line.show {
 	  opacity: 1;
 	  transform: translateY(0);
 	}
 
-	.hidden {
-	  display: none;
+	/* ========== Member Stats ========== */
+	#memberStats {
+	  margin-top: 2rem;
+	  background: var(--card-light);
+	  padding: 1rem;
+	  border-radius: 12px;
+	  display: inline-block;
+	  text-align: left;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 	}
-  }
+
+	/* ========== Animations ========== */
+	@keyframes feedbackIn {
+	  from { opacity: 0; transform: translate(-50%, -60%); }
+	  to   { opacity: 1; transform: translate(-50%, -50%); }
+	}
+	@keyframes feedbackOut {
+	  from { opacity: 1; transform: translate(-50%, -50%); }
+	  to   { opacity: 0; transform: translate(-50%, -40%); }
+	}
+	@keyframes bounce {
+	  0%, 100% { transform: scale(1); }
+	  50% { transform: scale(1.15); }
+	}
+	@keyframes shake {
+	  0%, 100% { transform: translateX(0); }
+	  25%, 75% { transform: translateX(-6px); }
+	  50% { transform: translateX(6px); }
+	}
+	@keyframes pulse-border {
+	  0% { border-width: 4px; transform: scale(1.05); }
+	  100% { border-width: 2px; transform: scale(1); }
+	}
+
+	/* Correct & Incorrect Button Feedback */
+	.correct-flash img {
+	  animation: bounce 0.3s ease-in-out;
+	  box-shadow: 0 0 8px 2px limegreen;
+	}
+	.correct-button {
+	  animation: pulse-border 0.4s ease;
+	}
+	.incorrect-shake {
+	  animation: shake 0.4s ease-in-out;
+	}
+
+	/* ========== Dark Mode ========== */
+	@media (prefers-color-scheme: dark) {
+	  body {
+		background-color: var(--bg-dark);
+		color: var(--text-dark);
+	  }
+
+	  .guess-btn {
+		  background: var(--card-dark);
+		  box-shadow:
+			0 4px 6px rgba(255, 255, 255, 0.05),
+			0 1px 3px rgba(255, 255, 255, 0.03);
+	  }
+
+	  .btn-content span {
+		 color: var(--text-dark);
+	  }
+
+	  #feedback.correct {
+		background-color: var(--correct-bg-dark);
+		color: #c2f0c2;
+	  }
+
+	  #feedback.incorrect {
+		background-color: var(--incorrect-bg-dark);
+		color: #ffd6d6;
+	  }
+	}
+
+	/* ========== Mobile Responsiveness ========== */
+	@media (max-width: 600px) {
+	  .guess-btn {
+		width: 100px;
+		height: 130px;
+	  }
+
+	  .btn-content img {
+		width: 80px;
+		height: 80px;
+	  }
+
+	  .lyric-box {
+		font-size: 1rem;
+	  }
+
+	  #visualizer {
+		height: 120px;
+	  }
+
+	  .audio-button {
+		width: 56px;
+		height: 56px;
+	  }
+	}
+	
+	.glass-card {
+	  background: rgba(255, 255, 255, 0.1);
+	  border: 1px solid rgba(255, 255, 255, 0.2);
+	  border-radius: 16px;
+	  padding: 2rem;
+	  margin: 2rem auto;
+	  max-width: 720px;
+	  backdrop-filter: blur(10px);
+	  -webkit-backdrop-filter: blur(10px);
+	  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+	  transition: background 0.3s ease;
+	}
+
+	@media (prefers-color-scheme: dark) {
+	  .glass-card {
+		background: rgba(30, 30, 30, 0.6);
+		border-color: rgba(255, 255, 255, 0.1);
+	  }
+	}
 </style>
 </head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <body>
-  <h1>🎤 tripleS Voice Quiz</h1>
+  <div class="glass-card">
+	  <h1>🎤 tripleS Voice Quiz</h1>
 
-  <div id="songSelector">
-    <label for="songDropdown">Choose a song:</label>
-    <select id="songDropdown"></select>
-  </div>
-  
-  <div id="sequentialModeWrapper" style="display: none; margin-top: 1rem;">
+	  <div id="songSelector">
+		<label for="songDropdown">Choose a song:</label>
+		<select id="songDropdown"></select>
+	  </div>
+	  
+	  <div id="sequentialModeWrapper" style="display: none; margin-top: 1rem;">
+		  <label>
+			<input type="checkbox" id="sequentialModeCheckbox">
+			Sequential Mode
+		  </label>
+	  </div>
+
+	  <div id="modeSelector">
+		<label><input type="radio" name="mode" value="all" checked> All Members</label>
+		<label><input type="radio" name="mode" value="bias"> My Biases</label>
+	  </div>
+	  
 	  <label>
-		<input type="checkbox" id="sequentialModeCheckbox">
-		Sequential Mode
+	  <input type="checkbox" id="lyricModeCheckbox" />
+	  Show Lyrics
 	  </label>
-  </div>
 
-  <div id="modeSelector">
-    <label><input type="radio" name="mode" value="all" checked> All Members</label>
-    <label><input type="radio" name="mode" value="bias"> My Biases</label>
+	  <div id="biasSelector" style="margin-top: 1rem;"></div>
+
+	  <div class="custom-audio-controls flex justify-center mt-6">
+		  <button id="playPauseBtn" class="audio-button">
+			<svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+			  <path d="M8 5v14l11-7z" />
+			</svg>
+			<svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+			  <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+			</svg>
+		  </button>
+		</div>
+
+	  <div class="score-container">
+		<p id="scoreDisplay">Score: <span id="animatedScore">0</span> / <span id="attemptsCount">0</span> (<span id="accuracyPercent">0</span>%)</p>
+		<p id="streakDisplay">🔥 Streak: 0</p>
+		<p id="highScoreDisplay">🏆 High Score: 0</p>
+		<button id="resetButton">Reset Score</button>
+	  </div>
   </div>
   
-  <label>
-  <input type="checkbox" id="lyricModeCheckbox" />
-  Show Lyrics
-  </label>
-
-  <div id="biasSelector" style="margin-top: 1rem;"></div>
-
   <audio id="audioPlayer"></audio>
 
   <canvas id="visualizer" width="800" height="150" style="width: 100%; height: 150px; margin-top: 1rem;"></canvas>
   
   <div id="lyricBox" class="lyric-box hidden">
 	  <p id="lyricLine" class="lyric-line"></p>
-  </div>
-
-  <div class="custom-audio-controls flex justify-center mt-6">
-	  <button id="playPauseBtn" class="audio-button">
-		<svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-		  <path d="M8 5v14l11-7z" />
-		</svg>
-		<svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-		  <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
-		</svg>
-	  </button>
-	</div>
-
-  <div class="score-container">
-    <p id="scoreDisplay">Score: <span id="animatedScore">0</span> / <span id="attemptsCount">0</span> (<span id="accuracyPercent">0</span>%)</p>
-    <p id="streakDisplay">🔥 Streak: 0</p>
-    <p id="highScoreDisplay">🏆 High Score: 0</p>
-    <button id="resetButton">Reset Score</button>
   </div>
 
   <div class="buttons" id="guessButtons"></div>
@@ -903,12 +883,12 @@
 		gradientFrom: "rgba(177, 114, 62, 1)",  // blue tone
 		gradientTo: "rgba(132, 101, 76, 0.1)",
 		shadowColor: "#c78638",
- 	  },
+	  },
 	  "Inner Dance": {
-		background: "#fff0f5",  // soft blush
-		gradientFrom: "rgba(255, 182, 193, 1)",  // cherry blossom pink
-		gradientTo: "rgba(255, 182, 193, 0.1)",
-		shadowColor: "#ffb6c1",
+		background: "#aa3971",  // soft blush
+		gradientFrom: "rgba(233, 223, 239, 1)",  // deep pink
+		gradientTo: "rgba(233, 223, 239, 0.1)",
+		shadowColor: "#da9dc0",
 	  },
 	  "Girls Never Die": {
 		background: '#000000',
