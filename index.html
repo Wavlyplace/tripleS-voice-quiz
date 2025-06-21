@@ -91,7 +91,9 @@
 	.custom-audio-controls {
 	  display: flex;
 	  justify-content: center;
-	  margin: 1.5rem 0;
+	  align-items: center;
+	  margin: 1.5rem auto;
+	  width: 100%;
 	}
 
 	.audio-button {
@@ -102,12 +104,14 @@
 	  border-radius: 50%;
 	  display: flex;
 	  align-items: center;
+	  margin: 0 auto;
 	  justify-content: center;
 	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	  border: none;
 	  cursor: pointer;
 	  transition: background-color 0.3s;
 	}
+	
 	.audio-button:hover {
 	  background-color: #333;
 	}
@@ -138,18 +142,7 @@
 	#highScoreDisplay {
 	  margin: 0.4rem 0;
 	}
-
-	#resetButton {
-	  margin-top: 0.75rem;
-	  padding: 0.5rem 1.2rem;
-	  font-size: 1rem;
-	  border: 2px solid var(--accent);
-	  border-radius: 8px;
-	  background-color: var(--card-light);
-	  color: var(--text-light);
-	  cursor: pointer;
-	  transition: all 0.3s ease;
-	}
+	
 	#resetButton:hover {
 	  background-color: var(--accent);
 	  color: white;
@@ -273,18 +266,6 @@
 	  transform: translateY(0);
 	}
 
-	/* ========== Member Stats ========== */
-	#memberStats {
-	  margin-top: 2rem;
-	  background: var(--card-bg);
-	  color: var(--text-color);
-	  padding: 1rem;
-	  border-radius: 12px;
-	  display: inline-block;
-	  text-align: left;
-	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-	}
-
 	/* ========== Animations ========== */
 	@keyframes feedbackIn {
 	  from { opacity: 0; transform: translate(-50%, -60%); }
@@ -371,53 +352,131 @@
 	  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 	  transition: background 0.3s ease;
 	}
+	
+	/* ========== Section & Form Group Layout ========== */
+	.section-block {
+	  margin-top: 1.5rem;
+	  padding-top: 1rem;
+	  border-top: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.form-group {
+	  margin-bottom: 1rem;
+	}
+
+	.radio-group label {
+	  margin-right: 1rem;
+	}
+
+	/* ========== Reset Button Group Styling ========== */
+	.reset-button-group {
+	  display: flex;
+	  justify-content: center;
+	  gap: 1rem;
+	  margin-top: 1.25rem;
+	}
+
+	.reset-btn {
+	  padding: 0.5rem 1.2rem;
+	  font-size: 1rem;
+	  border: 2px solid var(--accent);
+	  border-radius: 8px;
+	  background-color: var(--card-light);
+	  color: var(--text-light);
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+	}
+
+	.reset-btn:hover {
+	  background-color: var(--accent);
+	  color: white;
+	}
+	
+	/* Unified stats box style */
+	.stats-card {
+	  margin-top: 2rem;
+	  background: var(--card-bg);
+	  color: var(--text-color);
+	  padding: 1rem;
+	  border-radius: 12px;
+	  display: inline-block;
+	  text-align: left;
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+	  transition: background 0.3s ease, color 0.3s ease;
+	}
+	
+	.stats-wrapper {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center; /* ensures both cards are horizontally centered */
+	  gap: 1.5rem; /* nice breathing room between cards */
+	}
 </style>
 </head>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- in <head> -->
+  <script defer data-domain="wavlyplace.github.io" src="https://plausible.io/js/script.tagged-events.js"></script>
+  <script>
+    window.plausible = window.plausible || function() {
+      (window.plausible.q = window.plausible.q || []).push(arguments);
+    }
+  </script>
 <body>
   <div class="glass-card">
 	  <h1>🎤 tripleS Voice Quiz</h1>
 
-	  <div id="songSelector">
-		<label for="songDropdown">Choose a song:</label>
-		<select id="songDropdown"></select>
-	  </div>
-	  
-	  <div id="sequentialModeWrapper" style="display: none; margin-top: 1rem;">
+	  <!-- SONG & MODE CONTROLS -->
+	  <div class="section-block">
+		<div id="songSelector" class="form-group">
+		  <label for="songDropdown">Choose a song:</label>
+		  <select id="songDropdown"></select>
+		</div>
+
+		<div id="sequentialModeWrapper" class="form-group" style="display: none;">
 		  <label>
 			<input type="checkbox" id="sequentialModeCheckbox">
 			Sequential Mode
 		  </label>
-	  </div>
-
-	  <div id="modeSelector">
-		<label><input type="radio" name="mode" value="all" checked> All Members</label>
-		<label><input type="radio" name="mode" value="bias"> My Biases</label>
-	  </div>
-	  
-	  <label>
-	  <input type="checkbox" id="lyricModeCheckbox" />
-	  Show Lyrics
-	  </label>
-
-	  <div id="biasSelector" style="margin-top: 1rem;"></div>
-
-	  <div class="custom-audio-controls flex justify-center mt-6">
-		  <button id="playPauseBtn" class="audio-button">
-			<svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-			  <path d="M8 5v14l11-7z" />
-			</svg>
-			<svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-			  <path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
-			</svg>
-		  </button>
 		</div>
 
-	  <div class="score-container">
-		<p id="scoreDisplay">Score: <span id="animatedScore">0</span> / <span id="attemptsCount">0</span> (<span id="accuracyPercent">0</span>%)</p>
+		<div id="modeSelector" class="form-group radio-group">
+		  <label><input type="radio" name="mode" value="all" checked> All Members</label>
+		  <label><input type="radio" name="mode" value="bias"> My Biases</label>
+		</div>
+
+		<div class="form-group">
+		  <label>
+			<input type="checkbox" id="lyricModeCheckbox">
+			Show Lyrics
+		  </label>
+		</div>
+	  </div>
+
+	  <!-- BIAS SELECTOR -->
+	  <div id="biasSelector" class="section-block"></div>
+
+	  <!-- AUDIO CONTROLS -->
+	  <div class="section-block flex justify-center mt-4">
+		<button id="playPauseBtn" class="audio-button">
+		  <svg id="playIcon" class="icon" viewBox="0 0 24 24" fill="currentColor">
+			<path d="M8 5v14l11-7z" />
+		  </svg>
+		  <svg id="pauseIcon" class="icon hidden" viewBox="0 0 24 24" fill="currentColor">
+			<path d="M6 19h4V5H6zm8-14v14h4V5h-4z" />
+		  </svg>
+		</button>
+	  </div>
+
+	  <!-- SCORE & STATS -->
+	  <div class="section-block score-container">
+		<p id="scoreDisplay">🎯 Score: <span id="animatedScore">0</span> / <span id="attemptsCount">0</span> (<span id="accuracyPercent">0</span>%)</p>
 		<p id="streakDisplay">🔥 Streak: 0</p>
 		<p id="highScoreDisplay">🏆 High Score: 0</p>
-		<button id="resetButton">Reset Score</button>
+
+		<div class="reset-button-group">
+		  <button id="resetButton" class="reset-btn">Reset Score</button>
+		  <button id="resetStatsBtn" class="reset-btn">Reset Stats</button>
+		</div>
 	  </div>
   </div>
   
@@ -433,7 +492,17 @@
 
   <div id="feedback" class="hidden"></div>
 
-  <div id="memberStats" style="margin-top: 2rem;"></div>
+  <div class="stats-wrapper">
+	  <div id="memberStats" class="stats-card">
+		<h3>📊 Member Accuracy</h3>
+		<ul id="memberStatsList"></ul>
+	  </div>
+	  
+	  <div id="songStatsDisplay" class="stats-card">
+		<h3>🎶 Song Progress</h3>
+		<ul id="songStatsList"></ul>
+	  </div>
+  </div>
 </body>
 
 <script>
@@ -444,6 +513,7 @@
   let streak = 0;
   let highScore = parseInt(localStorage.getItem('highScore') || '0');
   let memberStats = {};
+  const songStats = {};
   let isFirstLoad = true;
   let sourceNode;
   let animationId;
@@ -599,6 +669,15 @@
 	  const dropdown = document.getElementById('songDropdown');
 	  dropdown.innerHTML =`<option value="All Songs">All Songs</option>` + songs.map(song => `<option value="${song}">${song}</option>`).join('');
 	}
+	
+  function ensureSongStats(song) {
+		if (!songStats[song]) {
+			songStats[song] = {
+				appearances: 0,
+				correctGuesses: 0
+			};
+		}
+	}
 
   function updateModeUI() {
 		const mode = getMode();
@@ -697,20 +776,22 @@
 		  const sequentialWrapper = document.getElementById('sequentialModeWrapper');
 		  const sequentialCheckbox = document.getElementById('sequentialModeCheckbox');
 
-		  // Show/hide sequential mode checkbox
+		  // 🔎 Track song change with Plausible
+		  plausible('Song Change', {
+			props: { song: selectedSong }
+		  });
+
 		  if (selectedSong === 'All Songs') {
 			sequentialWrapper.style.display = 'none';
-			sequentialCheckbox.checked = false; // Reset sequential mode when not valid
+			sequentialCheckbox.checked = false;
 		  } else {
 			sequentialWrapper.style.display = 'block';
 		  }
 
-		  // Reset sequential index only if sequential mode is active AND single song selected
 		  if (sequentialCheckbox.checked && selectedSong !== 'All Songs') {
-			sequentialIndex = 0; // 🔁 Reset sequence at start of new song
+			sequentialIndex = 0;
 		  }
 
-		  // Repopulate biases if in bias mode
 		  const mode = document.querySelector('input[name="mode"]:checked').value;
 		  if (mode === 'bias') populateBiasSelector(allMembers);
 
@@ -782,6 +863,8 @@
 		} else {
 			currentClip = filteredClips[Math.floor(Math.random() * filteredClips.length)];
 		}
+		
+		ensureSongStats(currentClip.song);
 
 		// 🔈 Set Audio
 		const folder = formatSongFolderName(currentClip.song);
@@ -801,6 +884,8 @@
 		audioPlayer.play().catch(e => console.log('Autoplay failed:', e));
 
 		updateLyricBox();
+		loadSongStats();
+		loadMemberStats();
 
 		const root = document.documentElement;
 
@@ -1055,41 +1140,55 @@
 	}
 
   function guess(button) {
-	  const selectedMember = button.dataset.name;
-	  const isCorrect = selectedMember === currentClip.member;
-	  attempts++;
-	  memberStats[currentClip.member].appearances++;
+		const selectedMember = button.dataset.name;
+		const isCorrect = selectedMember === currentClip.member;
+		attempts++;
+		memberStats[currentClip.member].appearances++;
+		songStats[currentClip.song].appearances++; // ✅ Always increase appearances
 
-	  if (isCorrect) {
-		score++;
-		streak++;
-		memberStats[selectedMember].correctGuesses++;
+		plausible('Guess', {
+			props: {
+				guessed: selectedMember,
+				correct: currentClip.member,
+				result: isCorrect ? 'correct' : 'incorrect',
+				song: currentClip.song
+			}
+		});
 
-		button.classList.add('correct-button');
-		const img = button.querySelector('img');
-		if (img) img.classList.add('correct-flash-btn');
+		if (isCorrect) {
+			score++;
+			streak++;
+			memberStats[selectedMember].correctGuesses++;
+			songStats[currentClip.song].correctGuesses++; // ✅ Track correct guess per song
 
-		setTimeout(() => {
-		  button.classList.remove('correct-button');
-		  if (img) img.classList.remove('correct-flash-btn');
-		}, 1000);
+			button.classList.add('correct-button');
+			const img = button.querySelector('img');
+			if (img) img.classList.add('correct-flash-btn');
 
-		if (score > highScore) {
-		  highScore = score;
-		  localStorage.setItem('highScore', highScore);
+			setTimeout(() => {
+				button.classList.remove('correct-button');
+				if (img) img.classList.remove('correct-flash-btn');
+			}, 1000);
+
+			if (score > highScore) {
+				highScore = score;
+				localStorage.setItem('highScore', highScore);
+			}
+		} else {
+			streak = 0;
+			button.classList.add('incorrect-shake');
+			setTimeout(() => {
+				button.classList.remove('incorrect-shake');
+			}, 400);
 		}
-	  } else {
-		streak = 0;
-		button.classList.add('incorrect-shake');
-		setTimeout(() => {
-		  button.classList.remove('incorrect-shake');
-		}, 400);
-	  }
+		
+		saveSongStats();
+		saveMemberStats();
 
-	  showFeedback(
-		isCorrect ? '✅ Correct!' : `❌ Nope! It was ${currentClip.member}.`,
-		isCorrect
-	  );
+		showFeedback(
+			isCorrect ? '✅ Correct!' : `❌ Nope! It was ${currentClip.member}.`,
+			isCorrect
+		);
 	}
 
 	function updateStats() {
@@ -1108,21 +1207,32 @@
 	}
 
   function renderMemberStats() {
-    const container = document.getElementById('memberStats');
-    if (!container) return;
+	  const list = document.getElementById('memberStatsList');
+	  if (!list) return;
 
-    container.innerHTML = '<h3>📊 Member Accuracy</h3>';
-    const list = document.createElement('ul');
+	  list.innerHTML = ''; // Clear previous content
 
-    for (const [member, stats] of Object.entries(memberStats)) {
-      const accuracy = stats.appearances === 0 ? '—' :
-        ((stats.correctGuesses / stats.appearances) * 100).toFixed(1) + '%';
-      const li = document.createElement('li');
-      li.textContent = `${member}: ${stats.correctGuesses} / ${stats.appearances} (${accuracy})`;
-      list.appendChild(li);
-    }
+	  for (const [member, stats] of Object.entries(memberStats)) {
+		const accuracy = stats.appearances === 0 ? '—' :
+		  ((stats.correctGuesses / stats.appearances) * 100).toFixed(1) + '%';
+		const li = document.createElement('li');
+		li.textContent = `${member}: ${stats.correctGuesses} / ${stats.appearances} (${accuracy})`;
+		list.appendChild(li);
+	  }
+	}
+  
+  function renderSongStats() {
+	  const list = document.getElementById('songStatsList');
+	  list.innerHTML = '';
 
-    container.appendChild(list);
+	  Object.keys(songStats).forEach(song => {
+		const { appearances, correctGuesses } = songStats[song];
+		const accuracy = appearances ? ((correctGuesses / appearances) * 100).toFixed(1) : "0.0";
+
+		const li = document.createElement('li');
+		li.textContent = `${song}: ${correctGuesses}/${appearances} (${accuracy}%)`;
+		list.appendChild(li);
+	  });
   }
 
   function resetScore() {
@@ -1144,6 +1254,7 @@
       feedback.classList.remove('show', 'correct', 'incorrect');
       updateStats();
       renderMemberStats();
+	  renderSongStats();
       loadNextClip();
     }, 1500);
   }
@@ -1214,6 +1325,57 @@
 		pauseIcon.classList.add('hidden');
 	  }
 	}
+	
+	function saveSongStats() {
+		localStorage.setItem('songStats', JSON.stringify(songStats));
+	}
+	
+	function saveMemberStats() {
+		localStorage.setItem('memberStats', JSON.stringify(memberStats));
+	}
+	
+	function loadSongStats() {
+		const storedStats = localStorage.getItem('songStats');
+		if (storedStats) {
+			Object.assign(songStats, JSON.parse(storedStats));
+		}
+	}
+	
+	function loadMemberStats() {
+		const stored = localStorage.getItem('memberStats');
+		if (stored) {
+			Object.assign(memberStats, JSON.parse(stored));
+		}
+	}
+	
+	function resetSongStats() {
+		localStorage.removeItem('songStats');
+		for (let song in songStats) {
+			songStats[song].appearances = 0;
+			songStats[song].correctGuesses = 0;
+		}
+		renderMemberStats(); // Or your equivalent re-rendering function
+	}
+	
+	function resetAllStats() {
+		localStorage.removeItem('songStats');
+		localStorage.removeItem('memberStats');
+
+		for (const song in songStats) {
+			songStats[song].appearances = 0;
+			songStats[song].correctGuesses = 0;
+		}
+		for (const member in memberStats) {
+			memberStats[member].appearances = 0;
+			memberStats[member].correctGuesses = 0;
+		}
+
+		updateStats();         // For score/streak display
+		renderMemberStats();   // For per-member breakdown
+		alert("All stats have been reset.");
+	}
+	
+	document.getElementById('resetStatsBtn').addEventListener('click', resetAllStats);
 
   window.onload = () => {
     loadClips();
