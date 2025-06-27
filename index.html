@@ -565,7 +565,12 @@
   function getMembersForSelectedSong() {
 	  const selectedSong = document.getElementById('songDropdown').value;
 	  const filteredClips = clips.filter(c => c.song === selectedSong);
-	  const uniqueMembers = [...new Set(filteredClips.map(c => c.member))]; // no sort here
+
+	  const allMembers = filteredClips.flatMap(c =>
+		c.member.split(",").map(m => m.trim())
+	  );
+
+	  const uniqueMembers = [...new Set(allMembers)];
 	  return uniqueMembers;
 	}
 	
@@ -584,6 +589,8 @@
 
     const buttonContainer = document.getElementById('guessButtons');
     buttonContainer.innerHTML = '';
+	
+	console.log("🔍 Rendering guess buttons for:", selectedMembers);
 
     selectedMembers.forEach(member => {
       memberStats[member] = memberStats[member] || { appearances: 0, correctGuesses: 0 };
@@ -631,7 +638,9 @@
 		relevantClips = clips.filter(c => c.song === selectedSong);
 	  }
 
-	  const songMembers = [...new Set(relevantClips.map(c => c.member))];
+	  const songMembers = [...new Set(
+		relevantClips.flatMap(c => c.member.split(",").map(m => m.trim()))
+	  )];
 
 	  const customOrder = [
 		"Seoyeon", "Hyerin", "Jiwoo", "Chaeyeon", "Yooyeon", "Soomin", "Nakyoung", "Yubin",
@@ -713,7 +722,9 @@
 		relevantClips = clips.filter(c => c.song === selectedSong);
 	  }
 
-	  const songMembers = [...new Set(relevantClips.map(c => c.member))];
+	  const songMembers = [...new Set(
+		relevantClips.flatMap(c => c.member.split(",").map(m => m.trim()))
+	  )];
 
 	  if (mode === 'bias') {
 		const selectedBiases = Array.from(document.querySelectorAll('#biasSelector input[type="checkbox"]:checked')).map(cb => cb.value);
@@ -750,7 +761,12 @@
 		// Now, once clips are loaded, do all this:
 		console.log("Mapped clips:", clips);
 
-		const allMembers = [...new Set(clips.map(c => c.member))];
+		const allMembers = [...new Set(
+		  clips.flatMap(c => c.member.split(",").map(name => name.trim()))
+		)];
+		
+		console.log("All unique members:", allMembers);
+
 		const allSongs = [...new Set(clips.map(c => c.song?.trim()).filter(Boolean))];
 
 		console.log("All songs:", allSongs);
@@ -836,9 +852,12 @@
 
 		const filteredClips = clips.filter(clip => {
 			const matchesSong = isAllSongs || clip.song === selectedSong;
-			const matchesMember = selectedMembers.includes(clip.member);
+			const clipMembers = clip.member.split(",").map(m => m.trim());
+			const matchesMember = clipMembers.some(m => selectedMembers.includes(m));
 			return matchesSong && matchesMember;
 		});
+		
+		console.log("Filtered clips:", filteredClips.map(c => c.filename));
 
 		if (filteredClips.length === 0) {
 			if (!isFirstLoad && !suppressNextLoadClipAlert) {
@@ -1141,10 +1160,19 @@
 
   function guess(button) {
 		const selectedMember = button.dataset.name;
-		const isCorrect = selectedMember === currentClip.member;
+
+		// ✅ New: Allow multiple correct members
+		const clipMembers = currentClip.member.split(",").map(name => name.trim());
+		const isCorrect = clipMembers.includes(selectedMember);
+
 		attempts++;
-		memberStats[currentClip.member].appearances++;
-		songStats[currentClip.song].appearances++; // ✅ Always increase appearances
+		songStats[currentClip.song].appearances++;
+
+		// ✅ New: Count appearance for each member in the clip
+		clipMembers.forEach(name => {
+			if (!memberStats[name]) memberStats[name] = { appearances: 0, correctGuesses: 0 };
+			memberStats[name].appearances++;
+		});
 
 		plausible('Guess', {
 			props: {
@@ -1158,8 +1186,15 @@
 		if (isCorrect) {
 			score++;
 			streak++;
-			memberStats[selectedMember].correctGuesses++;
-			songStats[currentClip.song].correctGuesses++; // ✅ Track correct guess per song
+
+			// ✅ New: Count correct guess for all matching members
+			clipMembers.forEach(name => {
+				if (name === selectedMember) {
+					memberStats[name].correctGuesses++;
+				}
+			});
+
+			songStats[currentClip.song].correctGuesses++;
 
 			button.classList.add('correct-button');
 			const img = button.querySelector('img');
@@ -1181,7 +1216,7 @@
 				button.classList.remove('incorrect-shake');
 			}, 400);
 		}
-		
+
 		saveSongStats();
 		saveMemberStats();
 
