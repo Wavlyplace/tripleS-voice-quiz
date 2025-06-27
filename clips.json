@@ -3038,5 +3038,255 @@
     "Difficulty": "Medium",
     "Notes": "Post-Chorus",
     "Lyric": "매일매일 커져가는 꿈속으로"
+  },
+  {
+    "ID": 305,
+    "Member": "All",
+    "Filename": "all_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:07.425-0:16.256",
+    "Difficulty": "Easy",
+    "Notes": "Intro",
+    "Lyric": "La-La-La-La / La-La-La-La / La-La-La-La / La-La-La"
+  },
+  {
+    "ID": 306,
+    "Member": "Yooyeon",
+    "Filename": "yooyeon_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:16.176-0:24.927",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "알아 너의 마음 / 나를 보고 웃는 / 앞에서는 오직 박수 세례 / 그 뒤엔 위선 뿐"
+  },
+  {
+    "ID": 307,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:24.927-0:26.730",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "I See You Lying Me"
+  },
+  {
+    "ID": 308,
+    "Member": "Chaeyeon",
+    "Filename": "chaeyeon_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:26.730-0:31.451",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "질투 섞인 걱정 따윈 Stop It Now / 세상에서 정해준 / Route I Don’t Mind"
+  },
+  {
+    "ID": 309,
+    "Member": "Kaede",
+    "Filename": "kaede_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:31.451-0:36.091",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "춤에 리듬 맡긴 채 / 나를 믿어볼 순간"
+  },
+  {
+    "ID": 310,
+    "Member": "Dahyun",
+    "Filename": "dahyun_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:36.065-0:41.501",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Woo Rising 이제 일어서서 / 고개들고 Fight It"
+  },
+  {
+    "ID": 311,
+    "Member": "Hyerin",
+    "Filename": "hyerin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:41.466-0:45.837",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "흔들려도 피어나는 꽃 / 드러내 What I’m Feeling"
+  },
+  {
+    "ID": 312,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:45.814-0:51.121",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "Woo Rising 이제 본질 속에 / 진주처럼 Like It"
+  },
+  {
+    "ID": 313,
+    "Member": "Yubin",
+    "Filename": "yubin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:51.087-0:55.547",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "반짝이는 나를 향해 Try / 세상에 One And Only Baby"
+  },
+  {
+    "ID": 314,
+    "Member": "All",
+    "Filename": "all_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "0:55.502-1:05.202",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "Just 꿈이 아닌 현실의 Dejavu / 단단해져 고난은 Make It True / Just 꿈에서 본 내 모습 Dejavu / 고통이 지나고 달라진 Make It Move"
+  },
+  {
+    "ID": 315,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:05.180-1:09.685",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "비바람 좀 더 세게 더 / 강해질 내게 바래"
+  },
+  {
+    "ID": 316,
+    "Member": "Soomin",
+    "Filename": "soomin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:09.640-1:12.048",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "날 믿어 Just Let Me"
+  },
+  {
+    "ID": 317,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:12.005-1:33.305",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "I Can Make It Raise It Recover It Now"
+  },
+  {
+    "ID": 318,
+    "Member": "Nakyoung",
+    "Filename": "nakyoung_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:33.305-1:42.682",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "Ayy no 자신있게 걷는 걸음 걸이 / 벌써 따라잡은 꿈의 거리 / One Day 이루리라 / Today 다르리라 / 나만 믿으리란 다짐"
+  },
+  {
+    "ID": 319,
+    "Member": "Dahyun",
+    "Filename": "dahyun_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:42.607-1:50.782",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "관심없어 네게 / 신경 쓰지 않아 / 마치 친구처럼 Acting 하고 / Reaction 해 But"
+  },
+  {
+    "ID": 320,
+    "Member": "Yooyeon",
+    "Filename": "yooyeon_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:50.745-1:52.920",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "I See You Lying Me"
+  },
+  {
+    "ID": 321,
+    "Member": "Yooyeon, Nakyoung, Yubin, Hyerin",
+    "Filename": "yooyeon_nakyoung_yubin_hyerin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:52.845-1:57.607",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "Just 꿈이 아닌 현실의 Dejavu / 단단해져 고난은 Make It True"
+  },
+  {
+    "ID": 322,
+    "Member": "Seoyeon, Chaeyeon, Jiwoo, Soomin",
+    "Filename": "seoyeon_chaeyeon_jiwoo_soomin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "1:57.532-2:02.708",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "Just 꿈에서 본 내 모습 Dejavu / 고통이 지나고 달라진 Make It Move"
+  },
+  {
+    "ID": 323,
+    "Member": "Yubin",
+    "Filename": "yubin_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:02.708-2:07.321",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "비바람 좀 더 세게 / 더 강해질 내게 바래"
+  },
+  {
+    "ID": 324,
+    "Member": "Soomin",
+    "Filename": "soomin_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:11.446-2:21.797",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "날 믿어 Just Let Me / And I Never Let Dream Go"
+  },
+  {
+    "ID": 325,
+    "Member": "All",
+    "Filename": "all_03.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:21.759-2:26.484",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "Just 꿈이 아닌 현실의 Dejavu / 단단해져 고난은 Make It True / Just 꿈에서 본 내 모습 Dejavu / 고통이 지나고 달라진 Make It Move"
+  },
+  {
+    "ID": 326,
+    "Member": "Hyerin",
+    "Filename": "hyerin_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:21.872-2:26.522",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "비바람 좀 더 세게 / 더 강해질 내게 바래"
+  },
+  {
+    "ID": 327,
+    "Member": "Chaeyeon",
+    "Filename": "chaeyeon_02.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:26.484-2:31.585",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "날 믿어 Just Let Me / And I Never Let Dream Go"
+  },
+  {
+    "ID": 328,
+    "Member": "Kaede, Soomin",
+    "Filename": "kaede_soomin_01.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:31.622-2:38.871",
+    "Difficulty": "Medium",
+    "Notes": "Outro",
+    "Lyric": "Always closer /  빨리 따라와 / You Just Follow"
+  },
+  {
+    "ID": 329,
+    "Member": "All",
+    "Filename": "all_04.mp3",
+    "Song": "Rising",
+    "Timestamp": "2:38.863-2:41.920",
+    "Difficulty": "Medium",
+    "Notes": "Outro",
+    "Lyric": "La-La-La-La"
   }
 ]
