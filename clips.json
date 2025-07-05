@@ -3968,5 +3968,225 @@
     "Difficulty": "Medium",
     "Notes": "Refrain",
     "Lyric": "La, La-La, La, La-La, La, La-La / La, La-La, La, La-La, La, La-La / La, La-La, La, La-La, La, La-La"
+  },
+  {
+    "ID": 398,
+    "Member": "All",
+    "Filename": "all_01.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:00.000-0:16.860",
+    "Difficulty": "Medium",
+    "Notes": "Intro",
+    "Lyric": "Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah"
+  },
+  {
+    "ID": 399,
+    "Member": "Sohyun",
+    "Filename": "sohyun_01.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:16.860-0:26.605",
+    "Difficulty": "Medium",
+    "Notes": "Verse 1",
+    "Lyric": "Yah, 왕관을 뺐어 찾아낸 blessin' / 내 몸은 이미 저주에 배어있지 / 잘못에 번져 독기를 뱉어 / 신에게 빌었지 I'm fallin'"
+  },
+  {
+    "ID": 400,
+    "Member": "Yubin",
+    "Filename": "yubin_01.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:26.605-0:35.274",
+    "Difficulty": "Medium",
+    "Notes": "Verse 2",
+    "Lyric": "Make up the reason why / 장미를 둘러싼 crown is mine / 눈치를 살펴 like / Story I follow 그제서야 better"
+  },
+  {
+    "ID": 401,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_01.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:34.377-0:44.002",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "We never lie / 약속을 해 (약속을 해) / 할말을 가득히 담아 두 손 모아 기도를 해 (Pray to mine)"
+  },
+  {
+    "ID": 402,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_01.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:42.996-0:51.959",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "But I can't stop, can't be killed (Can't be killed) / 죽음이 두려워 나는 또 저주를 퍼부어 / All day, yeah"
+  },
+  {
+    "ID": 403,
+    "Member": "All",
+    "Filename": "all_02.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "0:51.933-1:09.353",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "착한 척, 웃는 척 / 끄집어내려 널 / 바쁜 척, 아닌 척 / 끝도 없이 망쳐 널 / 착한 척, 웃는 척 / 끄집어내려 널 / 바쁜 척, 아닌 척 / 끝도 없이 망쳐 널"
+  },
+  {
+    "ID": 404,
+    "Member": "Yubin",
+    "Filename": "yubin_02.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:09.353-1:17.811",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh / Oh, eh, oh-oh / Oh, eh, oh-oh"
+  },
+  {
+    "ID": 405,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_02.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:17.782-1:26.540",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh / Oh, eh, oh-oh / Oh, eh, oh-oh"
+  },
+  {
+    "ID": 406,
+    "Member": "Yubin",
+    "Filename": "yubin_03.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:26.510-1:35.299",
+    "Difficulty": "Medium",
+    "Notes": "Verse 3",
+    "Lyric": "I talk to God, I feel like I'm above the stars / You don't know my life it's full of compromise"
+  },
+  {
+    "ID": 407,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_02.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:35.508-1:44.954",
+    "Difficulty": "Medium",
+    "Notes": "Verse 3",
+    "Lyric": "Underwater 잠겨가는 불협화음 / 네가 말한 그 괴물이 나란 걸, yeah"
+  },
+  {
+    "ID": 408,
+    "Member": "Sohyun",
+    "Filename": "sohyun_02.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:44.297-1:53.862",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "We never lie / 약속을 해 (약속을 해) / 할말을 가득히 담아 두 손 모아 기도를 해 (Pray to mine)"
+  },
+  {
+    "ID": 409,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_03.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "1:52.846-2:01.784",
+    "Difficulty": "Medium",
+    "Notes": "Pre-Chorus",
+    "Lyric": "But I can't stop, can't be killed (Can't be killed) / 죽음이 두려워 나는 또 저주를 퍼부어 / All day, yeah"
+  },
+  {
+    "ID": 410,
+    "Member": "All",
+    "Filename": "all_03.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:01.754-2:19.178",
+    "Difficulty": "Medium",
+    "Notes": "Chorus",
+    "Lyric": "착한 척, 웃는 척 / 끄집어내려 널 / 바쁜 척, 아닌 척 / 끝도 없이 망쳐 널 / 착한 척, 웃는 척 / 끄집어내려 널 / 바쁜 척, 아닌 척 / 끝도 없이 망쳐 널"
+  },
+  {
+    "ID": 411,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_03.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:19.178-2:27.940",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh / Oh, eh, oh-oh / Oh, eh, oh-oh"
+  },
+  {
+    "ID": 412,
+    "Member": "Sohyun",
+    "Filename": "sohyun_03.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:27.911-2:36.370",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh / Oh, eh, oh-oh / Oh, eh, oh-oh"
+  },
+  {
+    "ID": 413,
+    "Member": "Jiwoo",
+    "Filename": "jiwoo_04.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:36.355-2:41.288",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "Yeah, I'm drowning deep inside my desire"
+  },
+  {
+    "ID": 414,
+    "Member": "Yubin",
+    "Filename": "yubin_04.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:41.273-2:45.428",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "이 왕국의 주인은 나야 / 숨겨도 금방 뺏기게 될 거야"
+  },
+  {
+    "ID": 415,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_04.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:45.428-2:49.673",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "Yeah, I'm drowning deep inside my desire"
+  },
+  {
+    "ID": 416,
+    "Member": "Sohyun",
+    "Filename": "sohyun_04.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:49.658-2:54.396",
+    "Difficulty": "Medium",
+    "Notes": "Bridge",
+    "Lyric": "착한 척 나쁜 척 하기엔 난 / 그 속이 너무도 뻔뻔한 걸"
+  },
+  {
+    "ID": 417,
+    "Member": "Seoyeon",
+    "Filename": "seoyeon_05.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "2:54.142-3:02.536",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh  "
+  },
+  {
+    "ID": 418,
+    "Member": "Sohyun",
+    "Filename": "sohyun_05.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "3:02.515-3:12.098",
+    "Difficulty": "Medium",
+    "Notes": "Refrain",
+    "Lyric": "It's my pain drop / Oh, eh, oh-oh  "
+  },
+  {
+    "ID": 419,
+    "Member": "All",
+    "Filename": "all_04.mp3",
+    "Song": "Paindrop",
+    "Timestamp": "3:12.098-3:30.551",
+    "Difficulty": "Medium",
+    "Notes": "Outro",
+    "Lyric": "Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah / Aah-ah, aah-ah, aah"
   }
 ]
